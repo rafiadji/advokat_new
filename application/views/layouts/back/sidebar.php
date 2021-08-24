@@ -52,6 +52,12 @@
 						<p>Jadwal Sidang</p>
 					</a>
 				</li>
+				<li class="nav-item">
+					<a href="<?php echo site_url('advokat/lihatPerkara')?>" class="nav-link">
+						<i class="nav-icon fas fa-calendar-check"></i>
+						<p>Data Perkara Advokat</p>
+					</a>
+				</li>
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->
