@@ -107,3 +107,11 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
         </div>             
     </div>
 </section>
+<!-- BeginJS -->
+<?php
+$this->template->javascript->add('assets/plugins/datatables/jquery.dataTables.min.js');
+$this->template->javascript->add('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js');
+$this->template->javascript->add('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js');
+$this->template->javascript->add('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js');
+?>
+<!-- EndJS -->

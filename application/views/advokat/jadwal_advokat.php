@@ -13,64 +13,46 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">Jadwal Sidang</li>
                     <!-- <li class="breadcrumb-item active">Legacy User Menu</li> -->
                 </ol>
             </div>
         </div>
     </div>
 </section>
-
 <section class="content">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Selamat Datang</h3>
-
+            <h3 class="card-title">Jadwal Sidang Keseluruhan</h3>
             <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                    <i class="fas fa-minus"></i></button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                    <i class="fas fa-times"></i></button>
-            </div>
-        </div>
-        <div class="card-body">
-            Selamat Datang di Sistem Informasi Administrasi Perkara Hukum Advokat
-            <br>Mari bersama sama kita wujudkan pengelolaan perkara secara akurat, cepat dan terstruktur.
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Ada Sidang Hari Ini</h3>
-
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                    <i class="fas fa-minus"></i></button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                    <i class="fas fa-times"></i></button>
+                
             </div>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped datatable">
                 <thead>
                     <tr>
-                        <th>ID Persidangan</th>
-                        <th>Sidang</th>
+                        <th>Sidang Ke</th>
+                        <th>Judul</th>
+                        <th>Klien</th>
                         <th>Tanggal Sidang</th>
-                        <th>Jam Mulai Sidang</th>
-                        <th>Jam Selesai Sidang</th>
+                        <th>Jam Mulai</th>
+                        <th>Jam Selesai</th>
                         <th>Lokasi</th>
+                        <th>Advokat</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($sidangToday as $p):?>
+                    <?php foreach($jadwal as $p):?>
                     <tr class="">
-                        <td><?php echo $p->id_persidangan?></td>
-                        <td><?php echo $p->sidang_ke?></td> 
+                        <td><?php echo $p->sidang_ke?></td>
+                        <td><?php echo $p->judul?></td>
+                        <td><?php echo $p->nama_klien?></td>
                         <td><?php echo tgl_indo($p->tgl_sidang)?></td>
                         <td><?php echo $p->jam_sidang?></td>
                         <td><?php echo $p->jam_selesai_sidang?></td>
                         <td><?php echo $p->lokasi_pn?></td>
+                        <td><?php echo $p->nama?></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
