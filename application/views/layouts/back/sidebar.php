@@ -54,7 +54,7 @@
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('advokat/lihatPerkara')?>" class="nav-link">
-						<i class="nav-icon fas fa-calendar-check"></i>
+						<i class="nav-icon fas fa-archive"></i>
 						<p>Data Perkara Advokat</p>
 					</a>
 				</li>
@@ -64,6 +64,13 @@
 						<p>Jadwal Sidang Advokat</p>
 					</a>
 				</li>
+				<li class="nav-item">
+					<a href="<?php echo site_url('ketua/buatTimAdvokat')?>" class="nav-link">
+						<i class="nav-icon fas fa-users"></i>
+						<p>Tim Kuasa Hukum (menu ketua)</p>
+					</a>
+				</li>
+
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->
