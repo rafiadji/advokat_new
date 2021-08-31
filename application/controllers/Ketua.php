@@ -39,4 +39,30 @@ class Ketua extends CI_Controller {
     $this->template->content->view('ketua/timAdvokat', $data);
     $this->template->publish('layouts/back/base');
   }
+
+  // KHUSUS KLIEN
+
+  public function lihatKlien()
+  {
+     
+    $data['klien'] = $this->mk->tampilDataKlienKetua();
+
+    $this->template->title = 'Data Klien';
+    $this->template->page->title = 'Ketua';
+    $this->template->content->view('ketua/listKlienKetua', $data);
+    $this->template->publish('layouts/back/base');
+  }
+
+  // KARYAWAN
+
+  public function lihatKaryawan()
+  {
+     
+    $data['karyawan'] = $this->mk->tampilTabelKaryawan();
+
+    $this->template->title = 'Data Karyawan';
+    $this->template->page->title = 'Ketua';
+    $this->template->content->view('ketua/listKaryawanKetua', $data);
+    $this->template->publish('layouts/back/base');
+  }
 }

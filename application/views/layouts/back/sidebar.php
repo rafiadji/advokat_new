@@ -24,13 +24,13 @@
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('admin/lihatKlien')?>" class="nav-link">
-						<i class="nav-icon fas fa-users"></i>
+						<i class="nav-icon fas fa-portrait"></i>
 						<p>Data Klien</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('admin/lihatKaryawan')?>" class="nav-link">
-						<i class="nav-icon fa fa-user"></i>
+						<i class="nav-icon fa fa-id-card"></i>
 						<p>Data Karyawan</p>
 					</a>
 				</li>
@@ -38,12 +38,6 @@
 					<a href="<?php echo site_url('admin/lihattim')?>" class="nav-link">
 						<i class="nav-icon fas fa-comment-dots"></i>
 						<p>Data Tim Advokat</p>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="<?php echo site_url('admin/lihatkeuangan')?>" class="nav-link">
-						<i class="nav-icon fas fa-money-bill"></i>
-						<p>Keuangan</p>
 					</a>
 				</li>
 				<li class="nav-item">
@@ -70,7 +64,18 @@
 						<p>Tim Kuasa Hukum (menu ketua)</p>
 					</a>
 				</li>
-
+				<li class="nav-item">
+					<a href="<?php echo site_url('ketua/lihatKlien')?>" class="nav-link">
+						<i class="nav-icon fas fa-portrait"></i>
+						<p>Data Klien (menu ketua)</p>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="<?php echo site_url('ketua/lihatKaryawan')?>" class="nav-link">
+						<i class="nav-icon fas fa-id-card"></i>
+						<p>Data Karyawan (menu ketua)</p>
+					</a>
+				</li>
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->
