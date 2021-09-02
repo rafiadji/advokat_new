@@ -57,7 +57,7 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
                         </td>
                     </tr>
                     <?php endforeach;?>
-			</tbody>
+			    </tbody>
             </table>
         </div>
     </div>

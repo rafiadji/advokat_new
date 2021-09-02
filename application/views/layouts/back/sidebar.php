@@ -76,6 +76,12 @@
 						<p>Data Karyawan (menu ketua)</p>
 					</a>
 				</li>
+				<li class="nav-item">
+					<a href="<?php echo site_url('ketua/lihatPerkara')?>" class="nav-link">
+						<i class="nav-icon fas fa-id-card"></i>
+						<p>Data Perkara (menu ketua)</p>
+					</a>
+				</li>
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->
