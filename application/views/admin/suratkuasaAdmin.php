@@ -384,6 +384,12 @@
 										<input type="date" class="form-control" name="tgl_sidang" value="<?php echo $sidang1 ? $sidang1->tgl_sidang : "" ?>" <?= $sidang1 ? 'disabled' : '' ?>>
 									</div>
 								</div>
+								<div class="input-group date" id="timepicker" data-target-input="nearest">
+									<input type="text" class="form-control datetimepicker-input" data-target="#timepicker">
+									<div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
+										<div class="input-group-text"><i class="far fa-clock"></i></div>
+									</div>
+								</div>
 								<div class="bootstrap-timepicker">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Jam Persidangan</label>
