@@ -73,6 +73,7 @@ class Admin extends CI_Controller
 				'kategori' => $this->input->post('kategori'),
 				'tergugat' => $this->input->post('tergugat'),
 				'alamat_tergugat' => $this->input->post('alamat_tergugat'),
+				'nomor_perkara' => $this->input->post('nomor_perkara'),
 				'status' => 'onprocess'
 
 			);
@@ -134,7 +135,7 @@ class Admin extends CI_Controller
 	public function tambahDasarHukumSubmit()
 	{
 		$id_perkara = $this->input->post('id_perkara');
-		$config['upload_path'] = FCPATH . "asset/berkas";
+		$config['upload_path'] = FCPATH . "assets/berkas";
 		$config['allowed_types'] = 'pdf|jpeg|jpg';
 		$config['overwrite'] = TRUE;
 		$this->load->library('upload', $config);
@@ -377,7 +378,7 @@ class Admin extends CI_Controller
 	public function downloadResume()
 	{
 		$filename = $this->input->get('filename');
-		force_download('asset/berkas/' . $filename, NULL);
+		force_download('assets/berkas/' . $filename, NULL);
 	}
 
 	public function lihatTim()
@@ -393,7 +394,7 @@ class Admin extends CI_Controller
 	public function skNonLitigasiSubmit()
 	{
 		$id_perkara = $this->input->post('id_perkara');
-		$config['upload_path'] = FCPATH . "asset/berkas";
+		$config['upload_path'] = FCPATH . "assets/berkas";
 		$config['allowed_types'] = 'pdf|jpeg|jpg|docx';
 		$config['overwrite'] = TRUE;
 		$this->load->library('upload', $config);
@@ -416,7 +417,7 @@ class Admin extends CI_Controller
 	public function skLitigasiSubmit()
 	{
 		$id_perkara = $this->input->post('id_perkara');
-		$config['upload_path'] = FCPATH . "asset/berkas";
+		$config['upload_path'] = FCPATH . "assets/berkas";
 		$config['allowed_types'] = 'pdf|jpeg|jpg|docx';
 		$config['overwrite'] = TRUE;
 		$this->load->library('upload', $config);
@@ -594,7 +595,7 @@ class Admin extends CI_Controller
 	public function somasiSubmit()
 	{
 		$id_perkara = $this->input->post('id_perkara');
-		$config['upload_path'] = FCPATH . "asset/berkas";
+		$config['upload_path'] = FCPATH . "assets/berkas";
 		$config['allowed_types'] = 'pdf|jpeg|jpg|docx';
 		$config['overwrite'] = TRUE;
 		$this->load->library('upload', $config);
@@ -617,7 +618,7 @@ class Admin extends CI_Controller
 	public function somasiSuratBalasan($id)
 	{
 		$id_perkara = $this->input->post('id_perkara');
-		$config['upload_path'] = FCPATH . "asset/berkas";
+		$config['upload_path'] = FCPATH . "assets/berkas";
 		$config['allowed_types'] = 'pdf|jpeg|jpg|docx';
 		$config['overwrite'] = TRUE;
 		$this->load->library('upload', $config);
@@ -642,7 +643,7 @@ class Admin extends CI_Controller
 	public function somasiAktaDamai($id)
 	{
 		$id_perkara = $this->input->post('id_perkara');
-		$config['upload_path'] = FCPATH . "asset/berkas";
+		$config['upload_path'] = FCPATH . "assets/berkas";
 		$config['allowed_types'] = 'pdf|jpeg|jpg|docx';
 		$config['overwrite'] = TRUE;
 		$this->load->library('upload', $config);
@@ -671,7 +672,7 @@ class Admin extends CI_Controller
 	public function mediasiSubmit()
 	{
 		$id = $this->input->post('id_perkara');
-		$config['upload_path'] = FCPATH . "asset/berkas";
+		$config['upload_path'] = FCPATH . "assets/berkas";
 		$config['allowed_types'] = 'pdf|jpeg|jpg|docx';
 		$config['overwrite'] = TRUE;
 		$this->load->library('upload', $config);
