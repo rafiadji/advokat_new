@@ -78,7 +78,7 @@
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('ketua/lihatPerkara')?>" class="nav-link">
-						<i class="nav-icon fas fa-id-card"></i>
+						<i class="nav-icon fas fa-balance-scale"></i>
 						<p>Data Perkara (menu ketua)</p>
 					</a>
 				</li>

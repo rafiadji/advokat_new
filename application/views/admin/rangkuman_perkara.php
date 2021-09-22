@@ -273,14 +273,14 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
   <?php } 
   if ($dasar_hukum && $surat_kuasa && ($balasan && $balasan->status == 'pengadilan_negeri')){ ?>
   <!-- KONTEN MEDIASI PENGADILAN NEGERI -->
-  <div class="box box-primary">
-    <div class="box-header with-border">
-      <h3 class="box-title">4. Mediasi Pengadilan Negeri</h3>
-      <div class="box-tools pull-right">
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">4. Mediasi Pengadilan Negeri</h3>
+      <div class="card-tools">
         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
       </div>
     </div>
-      <div class="box-body">
+      <div class="card-body">
         <form class="form-horizontal" method="post" action="<?php echo site_url('admin/mediasiSubmit')?>" style="opacity:1;" enctype="multipart/form-data">
         <input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara?>">  
         <div class="form-group"> 
@@ -308,6 +308,7 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
       </div>
     </form>
   </div>
+  
   <?php } 
   if ($dasar_hukum && $surat_kuasa && ($balasan && $balasan->status == 'pengadilan_negeri') && ($mediasi && $mediasi->status == 'sidang')) {?>
   <!-- AWAL SELURUH KONTEN PERSIDANGAN -->
