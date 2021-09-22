@@ -52,8 +52,8 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
                         <td><?php echo $p->tergugat?></td>
                         <td><?php echo $p->status?></td>
                         <td>
-                            <a href="<?php echo site_url ('advokat/kelolaPerkaraAdvokat/'.$p->id_perkara)?>" class="btn btn-xs btn-success" ><i class="fa fa-pencil"></i></a>
-                            <a href="<?php echo site_url ('advokat/rangkumanPerkara/'.$p->id_perkara)?>" class="btn btn-xs btn-info" ><i class="fa fa-navicon"></i></a>
+                            <a href="<?php echo site_url ('advokat/kelolaPerkaraAdvokat/'.$p->id_perkara)?>" class="btn btn-xs btn-success" ><i class="fa fa-edit"></i></a>
+                            <a href="<?php echo site_url ('advokat/rangkumanPerkara/'.$p->id_perkara)?>" class="btn btn-xs btn-info" ><i class="fa fa-book"></i></a>
                         </td>
                     </tr>
                     <?php endforeach;?>

@@ -30,31 +30,27 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
             <table class="table table-bordered table-striped datatable">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>No.Perkara</th>
                         <th>Judul</th>
                         <th>Klien</th>
-                        <th>Tanggal Daftar Perkara</th>
-                        <th>kategori</th>
+                        <th>Tanggal Daftar</th>
+                        <th>Kategori</th>
                         <th>Tergugat</th>
-                        <th>No.Putusan</th>
-                        <th>Tanggal Putusan</th>
-                        <th>Amar</th>
                         <th>Status</th>
-                        <th>Opsi</th>
+                        <th>Kelola</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($perkara as $p):?>
                         <tr>
+                            <td></td>
                             <td><?php echo $p->nomor_perkara?></td>
                             <td><?php echo $p->judul?></td>
                             <td><?php echo $p->nama_klien?></td>
                             <td><?php echo tgl_indo($p->tgl_daftar_perkara)?></td>
                             <td><?php echo $p->kategori?></td>
                             <td><?php echo $p->tergugat?></td>
-                            <td><?php echo $p->nomor_putusan?></td>
-                            <td><?php echo isset($p->tgl_putusan) ? tgl_indo($p->tgl_putusan) : ""?></td>
-                            <td><?php echo $p->amar?></td>
                             <td><?php echo $p->status?></td>
                             <td>
                                 <a href="<?php echo site_url ('ketua/rangkumanPerkara/'.$p->id_perkara)?>" class="btn btn-xs btn-warning" ><i class="fa fa-folder-open"></i></a>
