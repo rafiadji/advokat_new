@@ -31,6 +31,7 @@
 			<?php echo $this->session->flashdata('ERROR'); ?>
 		</div>
 	<?php } ?>
+	<!-- detail perkara -->
 	<div class="card">
 		<div class="card-header">
 			<h3 class="card-title">DATA PERKARA</h3>
@@ -48,6 +49,7 @@
 			Status Perkara&nbsp;: <?= $detail->status ?><br>
 		</div>
 	</div>
+	<!-- Dasar Hukum -->
 	<div class="card">
 		<div class="card-header">
 			<h3 class="card-title">1. Dasar Hukum</h3>
@@ -56,9 +58,9 @@
 
 			</div>
 		</div>
-		<form class="form-horizontal" method="post" action="<?php echo site_url('admin/tambahDasarHukumSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+		<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/tambahDasarHukumSubmit')?>" style="opacity:1;" enctype="multipart/form-data">
 			<div class="card-body">
-				<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
+				<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara?>">
 				<div class="form-group">
 					<label class="col-md-1 control-label">Deskripsi</label>
 					<div class="col-md-11">
@@ -68,9 +70,9 @@
 				<div class="form-group">
 					<label class="col-md-1 control-label">File</label>
 					<div class="col-md-11">
-						<input type="file" name="file_dasar_hukum" <?= $dasar_hukum ? 'disabled' : '' ?>>
-						<input type="text" class="form-control" value="<?php echo $dasar_hukum ? $dasar_hukum->file_dasar_hukum : 'Belum Ada File' ?>" <?= $dasar_hukum ? 'disabled' : '' ?>>
-					</div>
+          				<input type="file" name="file_dasar_hukum" <?= $dasar_hukum ? 'disabled' : '' ?>>
+          				<input type="text" class="form-control" value="<?php echo $dasar_hukum ? $dasar_hukum->file_dasar_hukum : 'Belum Ada File' ?>" <?= $dasar_hukum ? 'disabled' : '' ?>>
+        			</div>
 				</div>
 			</div>
 			<?php if (!$dasar_hukum) : ?>
@@ -80,6 +82,7 @@
 			<?php endif; ?>
 		</form>
 	</div>
+	<!-- Surat Kuasa -->
 	<?php if ($dasar_hukum) : ?>
 		<div class="card card-tabs">
 			<h3 class="card-title">2. Surat Kuasa</h3>
@@ -95,9 +98,10 @@
 			</div>
 			<div class="card-body">
 				<div class="tab-content" id="custom-tabs-three-tabContent">
+					<!-- SK non Litigasi-->
 					<div class="tab-pane fade show active" id="nonlitigasi" role="tabpanel" aria-labelledby="nonlitigasi-tab">
 						<b>Surat Kuasa Non - Litigasi</b>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/skNonLitigasiSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/skNonLitigasiSubmit')?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
 								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
 								<input type="hidden" name="jenis_skNon" value="non-litigasi">
@@ -105,13 +109,15 @@
 									<label class="col-md-1 control-label">File</label>
 									<div class="col-md-11">
 										<input type="file" name="surat_kuasa" <?= $surat_kuasa_1 ? 'disabled' : '' ?>>
-										<input type="text" class="form-control" name="surat_kuasa" value="<?php if ($surat_kuasa_1) {
-																												foreach ($surat_kuasa_1 as $ska) {
-																													echo $ska->file;
+										<input type="text" class="form-control" name="surat_kuasa" value="<?php
+																												if ($surat_kuasa_1){
+																													foreach ($surat_kuasa_1 as $ska){
+																														echo $ska->file;
+																													}
+																												} else {
+																													echo "Belum Ada File"; 
 																												}
-																											} else {
-																												echo "Belum Ada File";
-																											} ?>" <?= $surat_kuasa_1 ? 'disabled' : '' ?>>
+																											?>" <?= $surat_kuasa_1 ? 'disabled' : '' ?>>
 									</div>
 								</div>
 							</div>
@@ -122,23 +128,24 @@
 							<?php endif; ?>
 						</form>
 					</div>
+					<!-- SK Litigasi-->
 					<div class="tab-pane fade" id="litigasi" role="tabpanel" aria-labelledby="litigasi-tab">
 						<b>Surat Kuasa Litigasi</b>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/skLitigasiSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/skLitigasiSubmit')?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
-								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
+								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara?>">
 								<input type="hidden" name="jenis_skLit" value="litigasi">
 								<div class="form-group">
 									<label class="col-md-1 control-label">File</label>
 									<div class="col-md-11">
 										<input type="file" name="surat_kuasa" <?= $surat_kuasa ? 'disabled' : '' ?>>
-										<input type="text" class="form-control" name="surat_kuasa" disabled value="<?php
-																													if ($surat_kuasa) {
-																														foreach ($surat_kuasa as $sk) {
-																															echo $sk->file;
-																														}
-																													} else {
-																														echo "Belum Ada File";
+										<input type="text" class="form-control" name="surat_kuasa" disabled value="<?php 
+																														if ($surat_kuasa){
+																															foreach ($surat_kuasa as $sk){
+																																echo $sk->file;
+																															}
+																														} else {
+																															echo "Belum Ada File";
 																													} ?>">
 									</div>
 								</div>
@@ -156,6 +163,7 @@
 		</div>
 	<?php endif;
 	if ($dasar_hukum && $surat_kuasa_1) : ?>
+	<!-- Somasi -->
 		<div class="card card-tabs">
 			<h3 class="card-title">3. Somasi</h3>
 			<div class="card-header p-0 pt-1 border-bottom-0">
@@ -172,16 +180,18 @@
 				</ul>
 			</div>
 			<div class="card-body">
+				
 				<div class="tab-content" id="custom-tabs-three-tabContent">
+					<!-- Surat Peringatan -->
 					<div class="tab-pane fade show active" id="peringatan" role="tabpanel" aria-labelledby="peringatan-tab">
 						<b>Surat Peringatan</b>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/somasiSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/somasiSubmit')?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
 								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
 								<div class="form-group">
 									<label class="col-md-3 control-label">Tanggal Terbit Surat Peringatan</label>
 									<div class="col-md-3">
-										<input type="date" name="tgl_terbit_surat_peringatan" class="form-control" placeholder="Tanggal Terbit Surat Peringatan" value="<?php echo $peringatan ? $peringatan->tgl_terbit_surat_peringatan : "" ?>" <?= $peringatan ? 'disabled' : '' ?>>
+										<input type="date" name="tgl_terbit_surat_peringatan" class="form-control" placeholder="Tanggal Terbit Surat Peringatan" value="<?php echo $peringatan ? $peringatan->tgl_terbit_surat_peringatan : "" ?>" <?= $peringatan ? 'disabled' : '' ?>> 
 									</div>
 								</div>
 								<div class="form-group">
@@ -199,16 +209,17 @@
 							<?php endif; ?>
 						</form>
 					</div>
+					<!-- Surat Balasan -->
 					<div class="tab-pane fade" id="balasan" role="tabpanel" aria-labelledby="balasan-tab">
 						<b>Surat Balasan</b>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/somasiSuratBalasan/' . $perkara->id_perkara) ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/somasiSuratBalasan/' . $perkara->id_perkara)?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
-								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
+								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara?>">
 								<div class="form-group">
 									<label class="col-md-3 control-label">Tanggal Terima Surat Balasan</label>
 									<div class="col-md-3">
-										<input type="date" name="tgl_terima_surat_balasan" class="form-control" placeholder="Tanggal Terima Surat Balasan" value="<?php echo $balasan ? $balasan->tgl_surat_balasan : "" ?>" <?= $balasan ? 'disabled' : '' ?>>
-									</div>
+										<input type="date" name="tgl_terima_surat_balasan" class="form-control" placeholder="Tanggal Terima Surat Balasan" value="<?php echo $balasan ? $balasan->tgl_surat_balasan : "" ?>" <?= $balasan ? 'disabled' : '' ?>> 
+									</div>  
 								</div>
 								<div class="form-group">
 									<label class="col-md-3 control-label">File Surat Balasan</label>
@@ -221,15 +232,15 @@
 									<label class="col-md-3 control-label">Status</label>
 									<div class="col-md-3">
 										<select class="form-control" name="status_somasi" <?= $balasan ? 'disabled' : '' ?>>
-											<option value="mediasi_non_pn" <?php echo $balasan && $balasan->status == 'mediasi_non_pn' ? 'selected' : '' ?>>Mediasi Non Pengadilan</option>
-											<option value="pengadilan_negeri" <?php echo $balasan && $balasan->status == 'pengadilan_negeri' ? 'selected' : '' ?>>Pengadilan Negeri</option>
+										<option value="mediasi_non_pn" <?php echo $balasan && $balasan->status == 'mediasi_non_pn' ? 'selected' : '' ?>>Mediasi Non Pengadilan</option>
+										<option value="pengadilan_negeri" <?php echo $balasan && $balasan->status == 'pengadilan_negeri' ? 'selected' : '' ?>>Pengadilan Negeri</option>
 										</select>
-									</div>
+									</div> 
 								</div>
 								<div class="form-group">
 									<label class="col-md-3 control-label">Notulen Somasi</label>
 									<div class="col-md-9">
-										<textarea class="form-control" name="notulen_somasi" placeholder="Notulen Somasi" <?= $balasan ? 'disabled' : '' ?>><?php echo $balasan ? $balasan->notulen_somasi : 'Belum Ada' ?></textarea>
+										<textarea class="form-control" name="notulen_somasi" placeholder="Notulen Somasi" <?= $balasan ? 'disabled' : '' ?>><?php echo $balasan ? $balasan->notulen_somasi : '' ?></textarea>
 									</div>
 								</div>
 							</div>
@@ -240,12 +251,13 @@
 							<?php endif; ?>
 						</form>
 					</div>
+					<!-- PErjanjan Damai -->
 					<div class="tab-pane fade" id="perjanjian" role="tabpanel" aria-labelledby="perjanjian-tab">
 						<b>Perjanjian Damai</b>
 						<p>Perjanjian Damai ada jika kedua belah pihak menyepakati untuk berdamai</p>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/somasiAktaDamai/' . $perkara->id_perkara) ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/somasiAktaDamai/' . $perkara->id_perkara)?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
-								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
+								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara?>">
 								<div class="form-group">
 									<label class="col-md-3 control-label">File Perjanjian Damai(*jika mediasi saat somasi berhasil)</label>
 									<div class="col-md-9">
