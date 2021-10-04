@@ -279,6 +279,7 @@
 		</div>
 	<?php endif;
 	if ($dasar_hukum && $surat_kuasa && ($balasan && $balasan->status == 'pengadilan_negeri')) : ?>
+	<!-- mediasi pengadilan negeri -->
 		<div class="card">
 			<div class="card-header">
 				<h3 class="card-title">4. Mediasi Pengadilan Negeri</h3>
@@ -287,7 +288,7 @@
 
 				</div>
 			</div>
-			<form class="form-horizontal" method="post" action="<?php echo site_url('admin/mediasiSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+			<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/mediasiSubmit')?>" style="opacity:1;" enctype="multipart/form-data">
 				<div class="card-body">
 					<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
 					<div class="form-group">
@@ -303,8 +304,8 @@
 						<label class="col-md-3 control-label">Akta Damai (* jika perkara menemui titik damai)</label>
 						<div class="col-md-9">
 							<input type="file" name="akta_damai" <?= $mediasi ? 'disabled' : '' ?>>
-							<input type="text" class="form-control" disabled name="file_akta_damai" value="<?php echo $mediasi ? $mediasi->akta_damai  : "Belum Ada File" ?>">
-						</div>
+							<input type="text" class="form-control" disabled name="akta_damai" value="<?php echo $mediasi ? $mediasi->akta_damai  : "Belum Ada File" ?>">
+						</div> 
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Keterangan</label>
@@ -378,9 +379,10 @@
 			</div>
 			<div class="card-body">
 				<div class="tab-content" id="custom-tabs-three-tabContent">
+					<!-- sidang 1-->
 					<div class="tab-pane fade show active" id="s1" role="tabpanel" aria-labelledby="s1-tab">
 						<b>Sidang Ke - 1</b>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/tambahDataPersidanganSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/ubahSidangbyAdvo')?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
 								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
 								<input type="hidden" name="id_persidangan" value="<?php echo $sidang1 ? $sidang1->id_persidangan : "" ?>">
@@ -390,10 +392,10 @@
 										<input type="text" class="form-control" value="1" name="sidang_ke" readonly>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Tanggal Persidangan</label>
 									<div class="col-md-3">
-										<input type="date" class="form-control" name="tgl_sidang" value="<?php echo $sidang1 ? $sidang1->tgl_sidang : "" ?>" <?= $sidang1 ? 'disabled' : '' ?>>
+										<input type="date" class="form-control" name="tgl_sidang" value="<?php echo $sidang1 ? $sidang1->tgl_sidang : "" ?>" <?= $sidang1 ? 'disabled' : '' ?> readonly>
 									</div>
 								</div>
 								<div class="input-group date" id="timepicker" data-target-input="nearest">
@@ -406,69 +408,70 @@
 									<div class="form-group">
 										<label class="col-md-3 control-label">Jam Persidangan</label>
 										<div class="col-md-2">
-											<div class="input-group">
-												<input type="text" class="form-control timepicker" name="jam_sidang" value="<?php echo $sidang1 ? $sidang1->jam_sidang : "" ?>" <?= $sidang1 ? 'disabled' : '' ?>>
-												<div class="input-group-addon">
-													<i class="fa fa-clock-o"></i>
-												</div>
+										<div class="input-group">
+											<input type="text" class="form-control timepicker" name="jam_sidang" value="<?php echo $sidang1 ? $sidang1->jam_sidang : "" ?>" <?= $sidang1 ? 'disabled' : '' ?> readonly>
+											<div class="input-group-addon">
+											<i class="fa fa-clock-o"></i>
 											</div>
+										</div>
 										</div>
 										<label class="control-label" style="float: left;">s.d.</label>
 										<div class="col-md-2">
-											<div class="input-group">
-												<input type="text" class="form-control timepicker" name="jam_sidang_selesai" value="<?php echo $sidang1 ? $sidang1->jam_selesai_sidang : "" ?>" <?= $sidang1 ? 'disabled' : '' ?>>
-												<div class="input-group-addon">
-													<i class="fa fa-clock-o"></i>
-												</div>
+										<div class="input-group">
+											<input type="text" class="form-control timepicker" name="jam_sidang_selesai" value="<?php echo $sidang1 ? $sidang1->jam_selesai_sidang : "" ?>" <?= $sidang1 ? 'disabled' : '' ?> readonly>
+											<div class="input-group-addon">
+											<i class="fa fa-clock-o"></i>
 											</div>
+										</div>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Lokasi Pengadilan Negeri</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control" name="pn" value="<?php echo $sidang1 ? $sidang1->lokasi_pn : "" ?>" <?= $sidang1 ? 'disabled' : '' ?>>
+										<input type="text" class="form-control" name="pn" value="<?php echo $sidang1 ? $sidang1->lokasi_pn : "" ?>" <?= $sidang1 ? 'disabled' : '' ?> readonly>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-3 control-label">Penugasan Advokat :</label>
 									<div class="col-md-9">
-										<?php foreach ($tim_perkara as $tp) { ?>
+										<?php foreach ($tim_perkara as $tp){ ?>
 											<div class="checkbox">
 												<label>
-													<input type="checkbox" name="nama_advokat[]" value="<?php echo $tp->nama; ?>" <?= in_array($tp->nama, $namaadvo1) ? 'checked' : ''; ?> <?= $sidang1 ? 'disabled' : '' ?>>
+													<input type="checkbox" name="nama_advokat[]" value="<?php echo $tp->nama; ?>" <?= in_array($tp->nama, $namaadvo1) ? 'checked' : ''; ?> <?= $sidang1 ? 'disabled' : '' ?> disabled>
 													<?php echo $tp->nama; ?>
 												</label>
 											</div>
 										<?php } ?>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Notulen</label>
-									<div class="col-md-9">
-										<textarea class="form-control" name="notulen" placeholder="Notulen Persidangan" <?= $sidang1 ? 'disabled' : '' ?>><?php echo $sidang1 ? $sidang1->notulen : "" ?></textarea>
-									</div>
+										<div class="col-md-9">
+											<textarea class="form-control" name="notulen" placeholder="Notulen Persidangan" ><?php echo $sidang1 ? $sidang1->notulen : "" ?></textarea>
+										</div>            
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">File Persidangan (* jika ada dokumen baru)</label>
 									<div class="col-md-9">
-										<input type="file" class="form-control" name="file_sidang" value="<?php echo $sidang1 ? $sidang1->file_persidangan : "" ?>" <?= $sidang1 ? 'disabled' : '' ?>>
+										<input type="file" class="form-control" name="file_sidang" value="<?php echo $sidang1 ? $sidang1->file_persidangan : "" ?>" >
 										<input type="text" class="form-control" name="file_sidang" disabled value="<?php echo $sidang1 ? $sidang1->file_persidangan : "" ?>" <?= $sidang1 ? 'disabled' : '' ?>>
 									</div>
 								</div>
 							</div>
-							<?php if (!$sidang1) : ?>
-								<div class="card-footer">
-									<button type="submit" class="btn btn-primary">Simpan</button>
+							<?php if (!isset($sidang1->notulen) && !isset($sidang1->file_persidangan)){ ?>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-primary">SIMPAN</button>
 								</div>
-							<?php endif; ?>
+							<?php } ?>
 						</form>
 					</div>
+					<!-- sidang 2-->
 					<div class="tab-pane fade" id="s2" role="tabpanel" aria-labelledby="s2-tab">
 						<b>Sidang Ke - 2</b>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/tambahDataPersidanganSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/ubahSidangbyAdvo')?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
-								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
+								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara?>"> 
 								<input type="hidden" name="id_persidangan" value="<?php echo $sidang2 ? $sidang2->id_persidangan : "" ?>">
 								<div class="form-group">
 									<label class="col-md-3 control-label">Sidang Ke</label>
@@ -476,79 +479,80 @@
 										<input type="text" class="form-control" value="2" name="sidang_ke" readonly>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Tanggal Persidangan</label>
 									<div class="col-md-3">
-										<input type="date" class="form-control" name="tgl_sidang" value="<?php echo $sidang2 ? $sidang2->tgl_sidang : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>>
+										<input type="date" class="form-control" name="tgl_sidang" value="<?php echo $sidang2 ? $sidang2->tgl_sidang : "" ?>" <?= $sidang2 ? 'disabled' : '' ?> readonly>
 									</div>
 								</div>
 								<div class="bootstrap-timepicker">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Jam Persidangan</label>
 										<div class="col-md-2">
-											<div class="input-group">
-												<input type="text" class="form-control timepicker" name="jam_sidang" value="<?php echo $sidang2 ? $sidang2->jam_sidang : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>>
-												<div class="input-group-addon">
-													<i class="fa fa-clock-o"></i>
-												</div>
+										<div class="input-group">
+											<input type="text" class="form-control timepicker" name="jam_sidang" value="<?php echo $sidang2 ? $sidang2->jam_sidang : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>readonly>
+											<div class="input-group-addon">
+											<i class="fa fa-clock-o"></i>
 											</div>
+										</div>
 										</div>
 										<label class="control-label" style="float: left;">s.d.</label>
 										<div class="col-md-2">
-											<div class="input-group">
-												<input type="text" class="form-control timepicker" name="jam_sidang_selesai" value="<?php echo $sidang2 ? $sidang2->jam_selesai_sidang : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>>
-												<div class="input-group-addon">
-													<i class="fa fa-clock-o"></i>
-												</div>
+										<div class="input-group">
+											<input type="text" class="form-control timepicker" name="jam_sidang_selesai" value="<?php echo $sidang2 ? $sidang2->jam_selesai_sidang : "" ?>" <?= $sidang2 ? 'disabled' : '' ?> readonly>
+											<div class="input-group-addon">
+											<i class="fa fa-clock-o"></i>
 											</div>
+										</div>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Lokasi Pengadilan Negeri</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control" name="pn" value="<?php echo $sidang2 ? $sidang2->lokasi_pn : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>>
+										<input type="text" class="form-control" name="pn" value="<?php echo $sidang2 ? $sidang2->lokasi_pn : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>readonly>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-3 control-label">Penugasan Advokat :</label>
 									<div class="col-md-9">
-										<?php foreach ($tim_perkara as $tp) { ?>
+										<?php foreach ($tim_perkara as $tp){ ?>
 											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="nama_advokat[]" value="<?php echo $tp->nama; ?>" <?= in_array($tp->nama, $namaadvo2) ? 'checked' : ''; ?> <?= $sidang2 ? 'disabled' : '' ?>>
-													<?php echo $tp->nama; ?>
-												</label>
+											<label>
+												<input type="checkbox" name="nama_advokat[]" value="<?php echo $tp->nama; ?>" <?= in_array($tp->nama, $namaadvo2) ? 'checked' : ''; ?> <?= $sidang2 ? 'disabled' : '' ?>disabled>
+												<?php echo $tp->nama; ?>
+											</label>
 											</div>
 										<?php } ?>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Notulen</label>
 									<div class="col-md-9">
-										<textarea class="form-control" name="notulen" placeholder="Notulen Persidangan" <?= $sidang2 ? 'disabled' : '' ?>><?php echo $sidang2 ? $sidang2->notulen : "" ?></textarea>
-									</div>
+										<textarea class="form-control" name="notulen" placeholder="Notulen Persidangan" ><?php echo $sidang2 ? $sidang2->notulen : "" ?></textarea>
+									</div>            
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">File Persidangan (* jika ada dokumen baru)</label>
 									<div class="col-md-9">
-										<input type="file" class="form-control" name="file_sidang" value="<?php echo $sidang2 ? $sidang2->file_persidangan : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>>
+										<input type="file" class="form-control" name="file_sidang" value="<?php echo $sidang2 ? $sidang2->file_persidangan : "" ?>" >
 										<input type="text" class="form-control" name="file_sidang" disabled value="<?php echo $sidang2 ? $sidang2->file_persidangan : "" ?>" <?= $sidang2 ? 'disabled' : '' ?>>
 									</div>
 								</div>
 							</div>
-							<?php if (!$sidang2) : ?>
-								<div class="card-footer">
-									<button type="submit" class="btn btn-primary">Simpan</button>
+							<?php if (!isset($sidang2->notulen) && !isset($sidang2->file_persidangan)){ ?>
+								<div class="box-footer">
+									<button type="submit" class="btn btn-primary">SIMPAN</button>
 								</div>
-							<?php endif; ?>
+							<?php } ?>
 						</form>
 					</div>
+					<!-- sidang 3-->
 					<div class="tab-pane fade" id="s3" role="tabpanel" aria-labelledby="s3-tab">
 						<b>Sidang Ke - 3</b>
-						<form class="form-horizontal" method="post" action="<?php echo site_url('admin/tambahDataPersidanganSubmit') ?>" style="opacity:1;" enctype="multipart/form-data">
+						<form class="form-horizontal" method="post" action="<?php echo site_url('advokat/ubahSidangbyAdvo')?>" style="opacity:1;" enctype="multipart/form-data">
 							<div class="card-body">
-								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara ?>">
+								<input type="hidden" name="id_perkara" value="<?php echo $perkara->id_perkara?>"> 
 								<input type="hidden" name="id_persidangan" value="<?php echo $sidang3 ? $sidang3->id_persidangan : "" ?>">
 								<div class="form-group">
 									<label class="col-md-3 control-label">Sidang Ke</label>
@@ -556,72 +560,72 @@
 										<input type="text" class="form-control" value="3" name="sidang_ke" readonly>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Tanggal Persidangan</label>
 									<div class="col-md-3">
-										<input type="date" class="form-control" name="tgl_sidang" value="<?php echo $sidang3 ? $sidang3->tgl_sidang : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>>
+										<input type="date" class="form-control" name="tgl_sidang" value="<?php echo $sidang3 ? $sidang3->tgl_sidang : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>readonly>
 									</div>
 								</div>
 								<div class="bootstrap-timepicker">
 									<div class="form-group">
 										<label class="col-md-3 control-label">Jam Persidangan</label>
 										<div class="col-md-2">
-											<div class="input-group">
-												<input type="text" class="form-control timepicker" name="jam_sidang" value="<?php echo $sidang3 ? $sidang3->jam_sidang : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>>
-												<div class="input-group-addon">
-													<i class="fa fa-clock-o"></i>
-												</div>
+										<div class="input-group">
+											<input type="text" class="form-control timepicker" name="jam_sidang" value="<?php echo $sidang3 ? $sidang3->jam_sidang : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>readonly>
+											<div class="input-group-addon">
+											<i class="fa fa-clock-o"></i>
 											</div>
+										</div>
 										</div>
 										<label class="control-label" style="float: left;">s.d.</label>
 										<div class="col-md-2">
-											<div class="input-group">
-												<input type="text" class="form-control timepicker" name="jam_sidang_selesai" value="<?php echo $sidang3 ? $sidang3->jam_selesai_sidang : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>>
-												<div class="input-group-addon">
-													<i class="fa fa-clock-o"></i>
-												</div>
+										<div class="input-group">
+											<input type="text" class="form-control timepicker" name="jam_sidang_selesai" value="<?php echo $sidang3 ? $sidang3->jam_selesai_sidang : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>readonly>
+											<div class="input-group-addon">
+											<i class="fa fa-clock-o"></i>
 											</div>
+										</div>
 										</div>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Lokasi Pengadilan Negeri</label>
 									<div class="col-md-9">
-										<input type="text" class="form-control" name="pn" value="<?php echo $sidang3 ? $sidang3->lokasi_pn : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>>
+										<input type="text" class="form-control" name="pn" value="<?php echo $sidang3 ? $sidang3->lokasi_pn : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>readonly>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-md-3 control-label">Penugasan Advokat :</label>
 									<div class="col-md-9">
-										<?php foreach ($tim_perkara as $tp) { ?>
+										<?php foreach ($tim_perkara as $tp){ ?>
 											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="nama_advokat[]" value="<?php echo $tp->nama; ?>" <?= in_array($tp->nama, $namaadvo3) ? 'checked' : ''; ?> <?= $sidang3 ? 'disabled' : '' ?>>
-													<?php echo $tp->nama; ?>
-												</label>
+											<label>
+												<input type="checkbox" name="nama_advokat[]" value="<?php echo $tp->nama; ?>" <?= in_array($tp->nama, $namaadvo3) ? 'checked' : ''; ?> <?= $sidang3 ? 'disabled' : '' ?>disabled>
+												<?php echo $tp->nama; ?>
+											</label>
 											</div>
 										<?php } ?>
 									</div>
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">Notulen</label>
 									<div class="col-md-9">
-										<textarea class="form-control" name="notulen" placeholder="Notulen Persidangan" <?= $sidang3 ? 'disabled' : '' ?>><?php echo $sidang3 ? $sidang3->notulen : "" ?></textarea>
-									</div>
+										<textarea class="form-control" name="notulen" placeholder="Notulen Persidangan" ><?php echo $sidang3 ? $sidang3->notulen : "" ?></textarea>
+									</div>            
 								</div>
-								<div class="form-group">
+								<div class="form-group"> 
 									<label class="col-md-3 control-label">File Persidangan (* jika ada dokumen baru)</label>
 									<div class="col-md-9">
-										<input type="file" class="form-control" name="file_sidang" value="<?php echo $sidang3 ? $sidang3->file_persidangan : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>>
+										<input type="file" class="form-control" name="file_sidang" value="<?php echo $sidang3 ? $sidang3->file_persidangan : "" ?>" >
 										<input type="text" class="form-control" name="file_sidang" disabled value="<?php echo $sidang3 ? $sidang3->file_persidangan : "" ?>" <?= $sidang3 ? 'disabled' : '' ?>>
 									</div>
 								</div>
 							</div>
-							<?php if (!$sidang3) : ?>
-								<div class="card-footer">
-									<button type="submit" class="btn btn-primary">Simpan</button>
+							<?php if (!isset($sidang3->notulen) && !isset($sidang3->file_persidangan)){ ?>
+								<div class="box-footer">
+								<button type="submit" class="btn btn-primary">SIMPAN</button>
 								</div>
-							<?php endif; ?>
+							<?php } ?>
 						</form>
 					</div>
 					<div class="tab-pane fade" id="s4" role="tabpanel" aria-labelledby="s4-tab">
