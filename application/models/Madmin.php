@@ -428,4 +428,9 @@ class Madmin extends CI_Model
         ORDER BY view_persidangan_in_detail.tgl_sidang DESC";
         return $this->db->query($query)->result();
     }
+
+    public function tampilTabelKonsultasi()
+    {
+        return $this->db->get('konsultasi')->result();
+    }
 }

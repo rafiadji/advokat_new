@@ -60,9 +60,10 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
             <div class="form-group"> <label class="">Advokat 1*</label>
                 <select name="advo1" class="form-control select2" id="advokat">
                 <option disabled selected>Pilih Advokat</option>
-                    <?php foreach($karyawan as $adv): ?>
-                    <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
-                    <?php endforeach; ?>
+                    <?php foreach($karyawan as $adv): 
+                        if($adv->beban < 3) :?>
+                        <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
+                    <?php endif; endforeach; ?>
                 </select>
             </div>
             <div class="form-group"> <label class="">Advokat 2*</label>

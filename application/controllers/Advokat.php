@@ -357,4 +357,24 @@ class Advokat extends CI_Controller {
 
   // KELOLA PERKARA
 
+  public function lihatKonsultasi()
+	{
+
+		$data['konsultasi'] = $this->mad->tampilTabelKonsultasi();
+
+		$this->template->title = 'Konsultasi';
+		$this->template->page->title = 'Konsultasi';
+		$this->template->content->view('advokat/listkonsultasi', $data);
+		$this->template->publish('layouts/back/base');
+	}
+
+  public function konsul($id)
+	{
+    $data['konsultasi'] = $this->mad->dataKonsultasi($id);
+
+		$this->template->title = 'Konsultasi';
+		$this->template->page->title = 'Konsultasi';
+		$this->template->content->view('advokat/konsul', $data);
+		$this->template->publish('layouts/back/base');
+	}
 }

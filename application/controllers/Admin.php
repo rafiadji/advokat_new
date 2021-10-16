@@ -701,4 +701,15 @@ class Admin extends CI_Controller
 		redirect('admin/kelolaPerkara/' . $id);
 	}
 	// mediasi PN
+
+	public function lihatKonsultasi()
+	{
+
+		$data['konsultasi'] = $this->ma->tampilTabelKonsultasi();
+
+		$this->template->title = 'Konsultasi';
+		$this->template->page->title = 'Konsultasi';
+		$this->template->content->view('admin/konsultasi', $data);
+		$this->template->publish('layouts/back/base');
+	}
 }

@@ -247,4 +247,16 @@ class MAdvokat extends CI_Model {
         ORDER BY view_persidangan_in_detail.tgl_sidang DESC ";
     return $this->db->query($query)->result();
   }
+
+  public function tampilTabelKonsultasi()
+  {
+      $this->db->where('tanggal_konsul = DATE(NOW())');
+      return $this->db->get('konsultasi')->result();
+  }
+
+  public function dataKonsultasi($id)
+  {
+      $this->db->where('id_konsultasi', $id);
+      return $this->db->get('konsultasi')->row();
+  }
 }
