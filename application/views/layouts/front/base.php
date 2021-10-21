@@ -74,15 +74,15 @@
                                         <h4 class="text-uppercase ls1">Login</h4>
                                         <form action="#" class="row mb-0" style="max-width: 300px;">
                                             <div class="col-12 form-group">
-                                                <label for="" class="text-capitalize font-weight-semibold">Email:</label>
-                                                <input type="email" id="template-op-form-email" name="template-op-form-email" value="" class="sm-form-control" />
+                                                <label for="" class="text-capitalize font-weight-semibold">Username:</label>
+                                                <input type="text" id="template-op-form-email" name="username" value="" class="sm-form-control" />
                                             </div>
                                             <div class="col-12 form-group">
                                                 <label for="" class="text-capitalize font-weight-semibold">Password:</label>
-                                                <input type="password" id="template-op-form-password" name="template-op-form-password" value="" class="sm-form-control" />
+                                                <input type="password" id="template-op-form-password" name="password" value="" class="sm-form-control" />
                                             </div>
                                             <div class="col-12 form-group">
-                                                <button type="submit" class="button button-rounded button-small button-dark m-0" value="submit">Register Now</button>
+                                                <button type="submit" class="button button-rounded button-small button-dark m-0" value="submit">Login</button>
                                             </div>
                                         </form>
                                         <p class="mb-0"><small class="font-weight-light"><em>* No Credit Card Required</em></small></p>
