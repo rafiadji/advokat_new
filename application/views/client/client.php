@@ -5,21 +5,21 @@
             <div class="container py-5">
 
                 <div class="heading-block center border-bottom-0">
-                    <h1 data-animate="fadeInUp">It's your time to <strong>create</strong> Landing Pages for <strong>FREE</strong></h1>
-                    <span data-animate="fadeInUp" data-delay="300">Building a Landing Page was never so Easy &amp; Interactive.</span>
+                    <h1 data-animate="fadeInUp">KEADILAN <strong> adalah</strong> Hak Seluruh Rakyat <strong> INDONESIA </strong></h1>
+                    <span data-animate="fadeInUp" data-delay="300">We are your progressive Law Partner</span>
                 </div>
 
                 <form action="<?php echo site_url('client/daftar'); ?>" method="post" class="landing-wide-form row align-items-center mb-0" data-animate="fadeIn">
                     <div class="col">
                         <div class="row">
                             <div class="col-lg-4 mb-2 mb-lg-0">
-                                <input type="text" name="nama" class="form-control form-control-lg not-dark" value="" placeholder="Your Name*">
+                                <input type="text" name="nama" class="form-control form-control-lg not-dark" value="" placeholder="Username Anda *">
                             </div>
                             <div class="col-lg-4 mb-2 mb-lg-0">
-                                <input type="email" name="email" class="form-control form-control-lg not-dark" value="" placeholder="Your Email*">
+                                <input type="text" name="no-ktp" class="form-control form-control-lg not-dark" value="" placeholder="Nomor KTP*">
                             </div>
                             <div class="col-lg-4 mb-2 mb-lg-0">
-                                <input type="password" name="password" class="form-control form-control-lg not-dark" value="" placeholder="Choose Password*">
+                                <input type="password" name="password" class="form-control form-control-lg not-dark" value="" placeholder="Kata Sandi*">
                             </div>
                         </div>
                     </div>
