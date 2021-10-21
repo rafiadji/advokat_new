@@ -20,7 +20,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Landing Page - Style 4 | Canvas</title>
+	<title>BUYUNG LAW FIRM</title>
 
 </head>
 
@@ -40,8 +40,8 @@
                         <!-- Logo
                         ============================================= -->
                         <div id="logo">
-                            <a href="index.html" class="standard-logo" data-dark-logo="<?php echo base_url('assets/front/images/logo-dark.png'); ?>"><img src="<?php echo base_url('assets/front/images/logo.png'); ?>" alt="Canvas Logo"></a>
-                            <a href="index.html" class="retina-logo" data-dark-logo="<?php echo base_url('assets/front/images/logo-dark@2x.png'); ?>"><img src="<?php echo base_url('assets/front/images/logo@2x.png'); ?>" alt="Canvas Logo"></a>
+                            <a href="index.html" class="standard-logo" data-dark-logo="<?php echo base_url('assets/front/images/logo.png'); ?>"><img src="<?php echo base_url('assets/front/images/logo.png'); ?>" alt="Canvas Logo"></a>
+                            <a href="index.html" class="retina-logo" data-dark-logo="<?php echo base_url('assets/front/images/logo.png'); ?>"><img src="<?php echo base_url('assets/front/images/logo@2x.png'); ?>" alt="Canvas Logo"></a>
                         </div><!-- #logo end -->
 
                         <div id="primary-menu-trigger">
@@ -54,9 +54,11 @@
 
                             <ul class="menu-container one-page-menu">
                                 <li class="menu-item current"><a class="menu-link" href="<?php echo site_url(''); ?>"><div>Home</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/daftarkonsultasi'); ?>"><div>Daftar Kosultasi (After Login)</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/konsultasi'); ?>"><div>Kosultasi (After Login)</div></a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/profile'); ?>"><div>Profil (After Login)</div></a></li>
+								<?php if($this->session->userdata('username') != NULL ) : ?>
+									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/daftarkonsultasi'); ?>"><div>Daftar Kosultasi (After Login)</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/konsultasi'); ?>"><div>Kosultasi (After Login)</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/profile'); ?>"><div>Profil (After Login)</div></a></li>
+								<?php endif;?>
                                 <li class="menu-item"><a href="#myModal1" data-lightbox="inline" class="menu-link"><div>Login</div></a></li>
                             </ul>
 
