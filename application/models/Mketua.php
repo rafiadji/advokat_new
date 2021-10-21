@@ -199,4 +199,9 @@ public function viewTim($data)
 
   // dashboard
 
+  // KONSULTASI
+  public function tampilTabelKonsultasi()
+    {
+        return $this->db->get('view_konsultasi')->result();
+    }
 }

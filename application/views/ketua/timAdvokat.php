@@ -39,7 +39,44 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
     <?php }
     ?>
     <!-- ALERT -->
+    <!-- Data Konsultasi -->
+    <div class="card">
+		<div class="card-header">
+			<h3 class="card-title">DATA KONSULTASI</h3>
 
+			<div class="card-tools">
+
+			</div>
+		</div>
+		<div class="card-body">
+			<table class="table table-bordered table-striped datatable">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Tanggal Konsultasi</th>
+						<th>Jam Konsultasi</th>
+						<th>Room Meeting</th>
+						<th>Nama Calon Klien</th>
+						<th>Nama Advokat</th>
+						<th>Kronologi </th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($konsultasi as $k) : ?>
+						<tr class="">
+							<td></td>
+							<td><?php echo $k->tanggal_konsul ?></td>
+							<td><?php echo $k->jam_konsul ?></td>
+							<td><?php echo $k->room_konsul ?></td>
+							<td><?php echo $k->nama ?></td>
+							<td><?php echo $k->namaadvo ?></td>
+							<td><?php echo $k->kronologi ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
     <!-- Input Tim Kuasa Hukum -->
     <div class="card">
         <div class="card-header">

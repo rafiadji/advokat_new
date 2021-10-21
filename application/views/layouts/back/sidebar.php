@@ -58,19 +58,19 @@
 				<li class="nav-item">
 					<a href="<?php echo site_url('advokat/lihatPerkara')?>" class="nav-link">
 						<i class="nav-icon fas fa-archive"></i>
-						<p>Data Perkara Advokat</p>
+						<p>Data Perkara</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('advokat/lihatKonsultasi')?>" class="nav-link">
 						<i class="nav-icon fas fa-balance-scale"></i>
-						<p>Konsultasi (Advokat)</p>
+						<p>Konsultasi</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('advokat/lihatJadwal')?>" class="nav-link">
 						<i class="nav-icon fas fa-calendar-alt"></i>
-						<p>Jadwal Sidang Advokat</p>
+						<p>Jadwal Sidang</p>
 					</a>
 				</li>
 				<?php endif;
@@ -78,25 +78,25 @@
 				<li class="nav-item">
 					<a href="<?php echo site_url('ketua/buatTimAdvokat')?>" class="nav-link">
 						<i class="nav-icon fas fa-users"></i>
-						<p>Tim Kuasa Hukum (menu ketua)</p>
+						<p>Tim Kuasa Hukum</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('ketua/lihatKlien')?>" class="nav-link">
 						<i class="nav-icon fas fa-portrait"></i>
-						<p>Data Klien (menu ketua)</p>
+						<p>Data Klien</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('ketua/lihatKaryawan')?>" class="nav-link">
 						<i class="nav-icon fas fa-id-card"></i>
-						<p>Data Karyawan (menu ketua)</p>
+						<p>Data Karyawan</p>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="<?php echo site_url('ketua/lihatPerkara')?>" class="nav-link">
 						<i class="nav-icon fas fa-balance-scale"></i>
-						<p>Data Perkara (menu ketua)</p>
+						<p>Data Perkara</p>
 					</a>
 				</li>
 				<?php endif;?>

@@ -33,6 +33,7 @@ class Ketua extends CI_Controller {
     $data['perkara'] = $this->ma->tampilDataPerkaraOnprocess();
     $data['karyawan'] = $this->mk->tampilDataAdvokatTim();
     $data['tim'] = $this->mk->viewTabelTim();
+    $data['konsultasi'] = $this->mk->tampilTabelKonsultasi();
     
     $this->template->title = 'Tim Advokat';
     $this->template->page->title = 'Ketua';

@@ -46,31 +46,36 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 			</div>
 		</div>
 		<div class="card-body">
-			<a class="btn btn-success" href="<?php echo site_url('admin/tambahKaryawan') ?>"><i class="fa fa-fw fa-plus"></i> Tambah</a>
 		</div>
 		<div class="card-body">
 			<table class="table table-bordered table-striped datatable">
 				<thead>
 					<tr>
 						<th></th>
+						<th>ID Konsultasi</th>
 						<th>Tanggal Konsultasi</th>
-						<th>Link Room</th>
-						<th>Klien </th>
-						<th>kronologi </th>
+						<th>Jam Konsultasi</th>
+						<th>Room Meeting</th>
+						<th>Nama Calon Klien</th>
+						<th>Nama Advokat</th>
+						<th>Kronologi </th>
 						<th>Opsi</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php foreach ($konsultasi as $k) : ?>
 						<tr class="">
-							<td></td>
 							<td><?php echo $k->tanggal_konsul ?></td>
+							<td><?php echo $k->tanggal_konsul ?></td>
+							<td><?php echo $k->tanggal_konsul ?></td>
+							<td><?php echo $k->jam_konsul ?></td>
 							<td><?php echo $k->room_konsul ?></td>
-							<td><?php echo $k->id_calon_klien ?></td>
+							<td><?php echo $k->nama ?></td>
+							<td><?php echo $k->namaadvo ?></td>
 							<td><?php echo $k->kronologi ?></td>
 							<td>
 								<a href="<?php echo site_url('admin/ubahKaryawan/' . $k->id_konsultasi) ?>" class="btn btn-primary btn-xs" onclick="
-									return confirm('Apakah Anda ingin melihat detail data Konsultasi')">Detail</a>
+									return confirm('Apakah Anda ingin melihat detail data Konsultasi')">SET KONSULTASI</a>
 							</td>
 						</tr>
 					<?php endforeach; ?>

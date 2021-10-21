@@ -26,6 +26,17 @@ class Admin extends CI_Controller
 		$this->template->publish('layouts/back/base');
 	}
 
+	// khusus konsultasi
+	public function editKonsultasi($id)
+	{
+		$data['konsultasi'] = $this->ma->tampilUbahKaryawan($id);
+
+		$this->template->title = 'Karyawan';
+		$this->template->page->title = 'Karyawan';
+		$this->template->content->view('admin/ubah_karyawan', $data);
+		$this->template->publish('layouts/back/base');
+	}
+
 	// KHUSUS PERKARA
 	public function lihatPerkara()
 	{

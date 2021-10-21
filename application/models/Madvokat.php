@@ -251,12 +251,12 @@ class MAdvokat extends CI_Model {
   public function tampilTabelKonsultasi()
   {
       $this->db->where('tanggal_konsul = DATE(NOW())');
-      return $this->db->get('konsultasi')->result();
+      return $this->db->get('view_konsultasi')->result();
   }
 
   public function dataKonsultasi($id)
   {
       $this->db->where('id_konsultasi', $id);
-      return $this->db->get('konsultasi')->row();
+      return $this->db->get('view_konsultasi')->row();
   }
 }
