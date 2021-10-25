@@ -250,7 +250,7 @@ class MAdvokat extends CI_Model {
 
   public function tampilTabelKonsultasi()
   {
-      $this->db->where('tanggal_konsul = DATE(NOW())');
+      $this->db->where('tanggal_konsul >= DATE(NOW()) AND tanggal_konsul < DATE(NOW()+interval 1 day)');
       return $this->db->get('view_konsultasi')->result();
   }
 

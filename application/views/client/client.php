@@ -5,7 +5,7 @@
             <div class="container py-5">
 
                 <div class="heading-block center border-bottom-0">
-                    <h1 data-animate="fadeInUp">KEADILAN <strong> adalah</strong> Hak Seluruh Rakyat <strong> INDONESIA </strong></h1>
+                    <h1 data-animate="fadeInUp"> " KEADILAN <strong> sosial</strong> bagi Seluruh Rakyat <strong> INDONESIA " </strong></h1>
                     <span data-animate="fadeInUp" data-delay="300">We are your progressive Law Partner</span>
                 </div>
 
@@ -16,7 +16,7 @@
                                 <input type="text" name="nama" class="form-control form-control-lg not-dark" value="" placeholder="Username Anda *">
                             </div>
                             <div class="col-lg-4 mb-2 mb-lg-0">
-                                <input type="text" name="no-ktp" class="form-control form-control-lg not-dark" value="" placeholder="Nomor KTP*">
+                                <input type="text" name="ktp" class="form-control form-control-lg not-dark" value="" placeholder="Nomor KTP*">
                             </div>
                             <div class="col-lg-4 mb-2 mb-lg-0">
                                 <input type="password" name="password" class="form-control form-control-lg not-dark" value="" placeholder="Kata Sandi*">
