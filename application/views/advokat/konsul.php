@@ -47,6 +47,13 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 		</div>
 		<div class="card-body">
 			<div class="meet embed-responsive embed-responsive-16by9"></div>
+			<form role="form" action="<?php echo site_url('advokat/save_konsul') ?>" method="post">
+				<input type="hidden" name="id_konsultasi" value="<?php echo $konsultasi->id_konsultasi?>">
+				<div class="form-group"> <label class="">Catatan</label>
+					<textarea name="catatan" id="catatan" cols="30" rows="10" class="form-control"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">SIMPAN</button>
+			</form>
 		</div>
 		<div class="card-footer">
 			<a href="<?php echo site_url('advokat/lihatKonsultasi') ?>" class="btn btn-danger">Keluar</a>
@@ -60,7 +67,10 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 		roomName: "<?php echo $konsultasi->room_konsul?>",
 		parentNode: document.querySelector('.meet'),
 		configOverwrite: {},
-		interfaceConfigOverwrite: {}
+		interfaceConfigOverwrite: {},
+		userInfo: {
+			displayName: '<?php echo $this->session->userdata('nama')?>'
+		}
 	}
 	var api = new JitsiMeetExternalAPI(domain, options);
 </script>

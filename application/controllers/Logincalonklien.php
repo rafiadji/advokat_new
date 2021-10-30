@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Logincalonklien extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Mlogin_klien');
+		$this->load->model('Mlogin_calonklien');
 	}
 
 	public function index()
@@ -19,12 +19,12 @@ class Login extends CI_Controller {
 	public function proses()
 	{
 		$post = $this->input->post();
-		$this->Mlogin->cek_login($post);
+		$this->Mlogin_calonklien->cek_login($post);
 	}
 
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect('advokat_new');
+		redirect();
 	}
 }

@@ -32,7 +32,10 @@
 		roomName: "<?php echo $konsultasi->room_konsul?>",
 		parentNode: document.querySelector('.meet'),
 		configOverwrite: {},
-		interfaceConfigOverwrite: {}
+		interfaceConfigOverwrite: {},
+		userInfo: {
+			displayName: '<?php echo $this->session->userdata('nama')?>'
+		}
 	}
 	var api = new JitsiMeetExternalAPI(domain, options);
 </script>

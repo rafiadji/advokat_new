@@ -377,4 +377,11 @@ class Advokat extends CI_Controller {
 		$this->template->content->view('advokat/konsul', $data);
 		$this->template->publish('layouts/back/base');
 	}
+
+  public function save_konsul()
+  {
+    $post = $this->input->post();
+    $this->mad->updateKonsultasi($post);
+    redirect('advokat/lihatkonsultasi');
+  }
 }
