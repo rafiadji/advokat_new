@@ -13,7 +13,7 @@
                     <div class="col">
                         <div class="row">
                             <div class="col-lg-4 mb-2 mb-lg-0">
-                                <input type="text" name="nama" class="form-control form-control-lg not-dark" value="" placeholder="Username Anda *">
+                                <input type="text" name="username" class="form-control form-control-lg not-dark" value="" placeholder="Username Anda *">
                             </div>
                             <div class="col-lg-4 mb-2 mb-lg-0">
                                 <input type="text" name="ktp" class="form-control form-control-lg not-dark" value="" placeholder="Nomor KTP*">

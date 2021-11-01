@@ -33,6 +33,13 @@ class Client extends CI_Controller
 		$this->template->publish('layouts/front/base');
     }
 
+	public function submitProfil()
+	{
+		$post = $this->input->post();
+		$this->mc->updateKlien($post);
+		redirect('client/client');
+	}
+
     public function konsultasi()
     {
         $data['konsultasi'] = $this->mc->dataKonsultasi(1); // angka 1 diganti session id
@@ -42,4 +49,6 @@ class Client extends CI_Controller
 		$this->template->content->view('client/konsultasi', $data);
 		$this->template->publish('layouts/front/base');
     }
+
+	
 }

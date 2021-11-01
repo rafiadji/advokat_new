@@ -17,4 +17,18 @@ class Mclient extends CI_Model
         // echo $this->db->last_query();
         return $this->db->get('konsultasi')->row();
     }
+
+    public function updateKlien($data)
+    {
+        $id = $data['id_calon_klien'];
+        $up = array(
+        "nama" => $data['nama'],
+        "jk" => $data['jk'],
+        "tgl_lahir" => $data['tgl_lahir'],
+        "alamat" => $data['alamat'],
+        "email" => $data['email']
+        );
+        $this->db->where('id_calon_klien', $id);
+        return $this->db->update('calon_klien', $up);
+    }
 }
