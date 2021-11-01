@@ -27,14 +27,40 @@ class Admin extends CI_Controller
 	}
 
 	// khusus konsultasi
+
+	
+	public function lihatKonsultasi()
+	{
+
+		$data['konsultasi'] = $this->ma->tampilTabelKonsultasi();
+
+		$this->template->title = 'Konsultasi';
+		$this->template->page->title = 'Konsultasi';
+		$this->template->content->view('admin/konsultasi', $data);
+		$this->template->publish('layouts/back/base');
+	}
+
 	public function editKonsultasi($id)
 	{
-		$data['konsultasi'] = $this->ma->tampilUbahKaryawan($id);
+		$data['konsultasi'] = $this->ma->tampilTabelKonsultasi($id);
 
-		$this->template->title = 'Karyawan';
-		$this->template->page->title = 'Karyawan';
-		$this->template->content->view('admin/ubah_karyawan', $data);
+		$this->template->title = 'Admin';
+		$this->template->page->title = 'Set Jadwal Konsul';
+		$this->template->content->view('admin/set_konsultasi', $data);
 		$this->template->publish('layouts/back/base');
+	}
+
+	public function setkonsulSubmit($id)
+	{
+		$data = array(
+			'tanggal_konsul' => $this->input->post('tanggal'),
+			'jam_konsul' => $this->input->post('jam'),
+			'room_konsul' => $this->input->post('room')
+			
+		);
+		$this->ma->settingKonsultasi($data, $id);
+		$this->session->set_flashdata('success_message', 'Data Klien berhasil diubah');
+		redirect('admin/konsultasi');
 	}
 
 	// KHUSUS PERKARA
@@ -713,14 +739,4 @@ class Admin extends CI_Controller
 	}
 	// mediasi PN
 
-	public function lihatKonsultasi()
-	{
-
-		$data['konsultasi'] = $this->ma->tampilTabelKonsultasi();
-
-		$this->template->title = 'Konsultasi';
-		$this->template->page->title = 'Konsultasi';
-		$this->template->content->view('admin/konsultasi', $data);
-		$this->template->publish('layouts/back/base');
-	}
 }
