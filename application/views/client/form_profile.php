@@ -16,7 +16,7 @@
                             <div class="form-widget" data-alert-type="false">
 
                                 <form class="mb-0" id="template-wedding" name="template-wedding" action="<?php echo site_url('client/submitProfil') ?>" method="post" enctype="multipart/form-data">
-
+                                <input type="hidden" name="id_calon_klien" value="<?php echo $calon_klien->id_calon_klien?>">
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="row">

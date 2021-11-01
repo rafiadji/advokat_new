@@ -31,4 +31,10 @@ class Mclient extends CI_Model
         $this->db->where('id_calon_klien', $id);
         return $this->db->update('calon_klien', $up);
     }
+
+    public function save_kronologi($data)
+    {
+        $this->db->insert('konsultasi', $data);
+    }
+
 }

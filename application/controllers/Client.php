@@ -50,5 +50,20 @@ class Client extends CI_Controller
 		$this->template->publish('layouts/front/base');
     }
 
+	public function daftarkonsultasi()
+    {
+        $this->template->title = 'Kronologi';
+		$this->template->page->title = 'Kronologi';
+		$this->template->content->view('client/daftar_konsul');
+		$this->template->publish('layouts/front/base');
+    }
+
+	public function kronologisubmit()
+    {
+        $post = $this->input->post();
+        $this->mc->save_kronologi($post);
+        redirect('client/client');
+    }
+
 	
 }
