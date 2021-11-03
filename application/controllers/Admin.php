@@ -8,6 +8,7 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Madmin', 'ma');
+		$this->load->model("Mketua", "mk");
 		$this->load->helper('download');
 	}
 
@@ -42,6 +43,7 @@ class Admin extends CI_Controller
 
 	public function editKonsultasi($id)
 	{
+		$data['karyawan'] = $this->mk->tampilDataAdvokatTim();
 		$data['konsultasi'] = $this->ma->tampilTabelKonsultasi($id);
 
 		$this->template->title = 'Admin';
@@ -50,17 +52,18 @@ class Admin extends CI_Controller
 		$this->template->publish('layouts/back/base');
 	}
 
-	public function setkonsulSubmit($id)
+	public function setkonsulSubmit()
 	{
+		$id = $this->input->post('id_konsul');
 		$data = array(
 			'tanggal_konsul' => $this->input->post('tanggal'),
 			'jam_konsul' => $this->input->post('jam'),
-			'room_konsul' => $this->input->post('room')
-			
+			'room_konsul' => $this->input->post('room'),
+			'id_karyawan' => $this->input->post('advokat')
 		);
 		$this->ma->settingKonsultasi($data, $id);
 		$this->session->set_flashdata('success_message', 'Data Klien berhasil diubah');
-		redirect('admin/konsultasi');
+		redirect('admin/lihatKonsultasi');
 	}
 
 	// KHUSUS PERKARA

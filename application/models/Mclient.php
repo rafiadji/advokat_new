@@ -37,4 +37,10 @@ class Mclient extends CI_Model
         $this->db->insert('konsultasi', $data);
     }
 
+    public function cek_info($id)
+    {
+        $this->db->where('id_calon_klien', $id);
+        return $this->db->get('calon_klien')->row();
+    }
+
 }

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql
+Source Server         : localhost_3306
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : buypartner
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2021-10-21 14:52:39
+Date: 2021-10-25 08:50:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,13 +30,14 @@ CREATE TABLE `calon_klien` (
   `status` varchar(255) DEFAULT NULL,
   `ktp` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_calon_klien`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of calon_klien
 -- ----------------------------
 INSERT INTO `calon_klien` VALUES ('1', 'alika', 'l', '2021-04-26', 'Jl. Sampian no 10', 'alika@gmail.com', '123456', 'klien', '3573014709970003');
 INSERT INTO `calon_klien` VALUES ('3', 'alisya', null, null, null, 'alisya@gmail.com', '123456', 'klien', null);
+INSERT INTO `calon_klien` VALUES ('4', 'Ika', null, null, null, 'ika@gmail.com', '1234567', null, null);
 
 -- ----------------------------
 -- Table structure for dasar_hukum
@@ -50,7 +51,7 @@ CREATE TABLE `dasar_hukum` (
   PRIMARY KEY (`id_dasar_hukum`),
   KEY `dsr-perkara` (`id_perkara`),
   CONSTRAINT `dsr-perkara` FOREIGN KEY (`id_perkara`) REFERENCES `perkara` (`id_perkara`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of dasar_hukum
@@ -59,7 +60,6 @@ INSERT INTO `dasar_hukum` VALUES ('14', '13', 'Mal Praktik dilakukan saat operas
 INSERT INTO `dasar_hukum` VALUES ('15', '14', 'Dasar hukum berdasarkan KUHPerdata', 'khs_total.pdf');
 INSERT INTO `dasar_hukum` VALUES ('16', '15', 'UU ITE', 'dasar_hukum.pdf');
 INSERT INTO `dasar_hukum` VALUES ('17', '16', 'Menggunakan Dsara Hukum UU ITE ', 'dasar_hukum.pdf');
-INSERT INTO `dasar_hukum` VALUES ('18', '17', 'UU ITE', 'dasar_hukum.pdf');
 
 -- ----------------------------
 -- Table structure for detail_penugasan_persidangan
@@ -125,11 +125,6 @@ INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '43', '4');
 INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '44', '4');
 INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '45', '4');
 INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '46', '4');
-INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '47', '4');
-INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '48', '4');
-INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '48', '8');
-INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '49', '4');
-INSERT INTO `detail_penugasan_persidangan` VALUES ('15', '49', '8');
 
 -- ----------------------------
 -- Table structure for detail_perkara
@@ -161,7 +156,7 @@ INSERT INTO `detail_perkara` VALUES ('4', '16');
 INSERT INTO `detail_perkara` VALUES ('5', '16');
 INSERT INTO `detail_perkara` VALUES ('4', '17');
 INSERT INTO `detail_perkara` VALUES ('8', '17');
-INSERT INTO `detail_perkara` VALUES ('7', '17');
+INSERT INTO `detail_perkara` VALUES ('5', '17');
 
 -- ----------------------------
 -- Table structure for honorarium
@@ -220,10 +215,10 @@ CREATE TABLE `karyawan` (
 -- ----------------------------
 -- Records of karyawan
 -- ----------------------------
-INSERT INTO `karyawan` VALUES ('1', '0987654', '3573011479970003', 'Zaki', '0000-00-00', 'P', 'Sawojajar', 'adminzaki', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADM', '141111079@mhs.stiki.ac.id', '082234934492', 'PDT');
+INSERT INTO `karyawan` VALUES ('1', '0987654', '3573011479970003', 'Zaki', '0000-00-00', 'P', 'Sawojajar', 'adminzaki', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADM', '151111021@mhs.stiki.ac.id', '082234934492', 'PDT');
 INSERT INTO `karyawan` VALUES ('2', '9774673', '1324335', 'Arizki Redita', '1997-04-26', 'P', 'Singosari', 'arizki', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADV', '151111031@mhs.stiki.ac.id', '089364723812', 'PDN');
 INSERT INTO `karyawan` VALUES ('3', '864395572', '352464757', 'Danang Nugroho Adi', '1995-05-12', 'L', 'Bunul', 'danang', 'cc03e747a6afbbcbf8be7668acfebee5', 'K', '141111079@mhs.stiki.ac.id', '082233838318', 'PDTN');
-INSERT INTO `karyawan` VALUES ('4', '000001', '0897665', 'Amylia Kartika Adi, S.H', '1997-09-07', 'P', 'Sawojajar', 'sari', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADV', '151111021@mhs.stiki.ac.id', '082234934492', 'PDT');
+INSERT INTO `karyawan` VALUES ('4', '000001', '0897665', 'Amylia Kartika Adi, S.H', '1997-09-07', 'P', 'Sawojajar', 'amykachan', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADV', '151111021@mhs.stiki.ac.id', '082234934492', 'PDT');
 INSERT INTO `karyawan` VALUES ('5', '000002', '76872457', 'Pratama Adji, S.H', '1997-02-13', 'L', 'Tidar', 'rafiadji', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADV', '151111081@mhs.stiki.ac.id', '082234567890', 'PDT');
 INSERT INTO `karyawan` VALUES ('7', '736565', '732458', 'Yohanes Dwi S.H, M.Hum', '1995-03-08', 'L', 'Mergan', 'yohanesdl', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADV', 'yohanesdl9@gmail.com', '456789', 'PDTN');
 INSERT INTO `karyawan` VALUES ('8', '4353466', '46688', 'Danang Nugroho, S.H ', '2015-05-12', 'L', 'Bunul', 'danz', 'cc03e747a6afbbcbf8be7668acfebee5', 'ADV', '141111079@mhs.stiki.ac.id', '089364723812', 'PDTN');
@@ -269,18 +264,18 @@ CREATE TABLE `konsultasi` (
   `room_konsul` varchar(255) DEFAULT NULL,
   `id_calon_klien` int(11) DEFAULT NULL,
   `id_karyawan` int(11) DEFAULT NULL,
-  `jam_konsul` time DEFAULT NULL,
   PRIMARY KEY (`id_konsultasi`),
   KEY `fk-clien-konsul` (`id_calon_klien`),
-  KEY `fk-konsultasi-advo` (`id_karyawan`),
-  CONSTRAINT `fk-clien-konsul` FOREIGN KEY (`id_calon_klien`) REFERENCES `calon_klien` (`id_calon_klien`),
-  CONSTRAINT `fk-konsultasi-advo` FOREIGN KEY (`id_karyawan`) REFERENCES `karyawan` (`id_karyawan`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  KEY `fk-advokat-konsul` (`id_karyawan`),
+  CONSTRAINT `fk-advokat-konsul` FOREIGN KEY (`id_karyawan`) REFERENCES `karyawan` (`id_karyawan`),
+  CONSTRAINT `fk-clien-konsul` FOREIGN KEY (`id_calon_klien`) REFERENCES `calon_klien` (`id_calon_klien`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of konsultasi
 -- ----------------------------
-INSERT INTO `konsultasi` VALUES ('1', '2021-10-21', 'jadi gini, tapi gitu, saya juga bingung mau gimana', 'alika1', '1', '2', '14:33:00');
+INSERT INTO `konsultasi` VALUES ('1', null, 'jadi gini, tapi gitu, saya juga bingung mau gimana', 'alika_1', '1', '2');
+INSERT INTO `konsultasi` VALUES ('2', '2021-10-16', 'jadi begitu', 'alika_2', '1', '2');
 
 -- ----------------------------
 -- Table structure for mediasi
@@ -365,7 +360,7 @@ INSERT INTO `perkara` VALUES ('13', 'Mal Praktik', '2019-08-01', 'perdata', 'khs
 INSERT INTO `perkara` VALUES ('14', 'Perceraian', '2019-10-28', 'perdata', 'khs_total.pdf', '6', 'putusan', null, '2019-11-04', 'Putus', 'putusan.pdf', '02/pdt/2019', 'pts/pdt/001/09346/mlg', 'perceraian', 'haryanto', 'sidoarjo', 'dikabulkan', null);
 INSERT INTO `perkara` VALUES ('15', 'Pencemaran Nama Baik', '2019-09-02', 'perdata', 'legalopini.pdf', '8', 'onprocess', null, null, null, null, '03/pdt/2019', null, 'pencemaran nama baik', 'calisa', 'surabaya', null, null);
 INSERT INTO `perkara` VALUES ('16', 'Pencemaran Nama Baik Di Sosial Media', '2019-11-01', 'perdata', 'legalopini.pdf', '2', 'onprocess', null, null, null, null, null, null, 'pencemaran nama baik', 'Carolisa Handayani', 'Mergan, Malang ', null, null);
-INSERT INTO `perkara` VALUES ('17', 'Pengancaman', '2020-11-09', 'perdata', '1448604438_27-11-2015.pdf', '6', 'onprocess', null, null, null, null, null, null, 'lainnya', 'Krisnathan Yudianto', 'Jl. Sekarpuro', null, null);
+INSERT INTO `perkara` VALUES ('17', 'pencurian', '2021-10-13', 'perdata', 'Bukti_Persetujuan_perpanjangan_Sk_(_Ka_Prodi).pdf', '7', 'onprocess', null, null, null, null, 'pdt00121', null, 'pencurian', 'diego', 'yhrdesws', null, null);
 
 -- ----------------------------
 -- Table structure for persidangan
@@ -381,7 +376,7 @@ CREATE TABLE `persidangan` (
   `file_persidangan` varchar(255) DEFAULT NULL,
   `notulen` text DEFAULT NULL,
   PRIMARY KEY (`id_persidangan`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of persidangan
@@ -423,9 +418,6 @@ INSERT INTO `persidangan` VALUES ('43', '4', '2021-05-07', '13:15:00', '15:15:00
 INSERT INTO `persidangan` VALUES ('44', '5', '2021-05-11', '13:30:00', '15:30:00', 'Pengadilan Negeri Malang Kelas 1', null, null);
 INSERT INTO `persidangan` VALUES ('45', '6', '2021-05-13', '13:45:00', '15:45:00', 'Pengadilan Negeri Malang Kelas 1', null, null);
 INSERT INTO `persidangan` VALUES ('46', '7', '2021-05-20', '14:00:00', '15:00:00', 'Pengadilan Negeri Malang Kelas 1', null, null);
-INSERT INTO `persidangan` VALUES ('47', '8', '2021-09-09', '14:00:00', '15:00:00', 'Pengadilan Negeri Malang Klas ', null, null);
-INSERT INTO `persidangan` VALUES ('48', '9', '2021-09-16', '14:15:00', '15:15:00', '', null, null);
-INSERT INTO `persidangan` VALUES ('49', '10', '2021-09-23', '14:15:00', '16:15:00', 'Pengadilan Negeri Malang Klas 1', null, null);
 
 -- ----------------------------
 -- Table structure for somasi
@@ -466,7 +458,7 @@ CREATE TABLE `surat_kuasa` (
   PRIMARY KEY (`id_surat_kuasa`),
   KEY `kuasa-perkara` (`id_perkara`),
   CONSTRAINT `kuasa-perkara` FOREIGN KEY (`id_perkara`) REFERENCES `perkara` (`id_perkara`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of surat_kuasa
@@ -479,7 +471,6 @@ INSERT INTO `surat_kuasa` VALUES ('29', '15', 'non-litigasi', 'sk-non-litigasi.p
 INSERT INTO `surat_kuasa` VALUES ('30', '15', 'litigasi', 'sk-litigasi.pdf');
 INSERT INTO `surat_kuasa` VALUES ('31', '16', 'non-litigasi', 'sk-non-litigasi.pdf');
 INSERT INTO `surat_kuasa` VALUES ('32', '16', 'litigasi', 'sk-litigasi.pdf');
-INSERT INTO `surat_kuasa` VALUES ('33', '17', 'non-litigasi', 'sk-litigasi.pdf');
 
 -- ----------------------------
 -- Table structure for trans_masuk
@@ -515,25 +506,6 @@ DROP VIEW IF EXISTS `view_email_jadwal`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `view_email_jadwal` AS select `persidangan`.`id_persidangan` AS `id_persidangan`,`persidangan`.`tgl_sidang` AS `tgl_sidang`,`persidangan`.`jam_sidang` AS `jam_sidang`,`persidangan`.`jam_selesai_sidang` AS `jam_selesai_sidang`,`persidangan`.`lokasi_pn` AS `lokasi_pn`,`perkara`.`judul` AS `judul`,`karyawan`.`id_karyawan` AS `id_karyawan`,`karyawan`.`nama` AS `nama`,`karyawan`.`email` AS `email`,`klien`.`nama_klien` AS `nama_klien`,`klien`.`email_klien` AS `email_klien` from ((((`persidangan` join `detail_penugasan_persidangan` on((`detail_penugasan_persidangan`.`id_persidangan` = `persidangan`.`id_persidangan`))) join `perkara` on((`detail_penugasan_persidangan`.`id_perkara` = `perkara`.`id_perkara`))) join `karyawan` on((`detail_penugasan_persidangan`.`id_karyawan` = `karyawan`.`id_karyawan`))) join `klien` on((`perkara`.`id_klien` = `klien`.`id_klien`))) ; ;
 
 -- ----------------------------
--- View structure for view_konsultasi
--- ----------------------------
-DROP VIEW IF EXISTS `view_konsultasi`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `view_konsultasi` AS SELECT
-konsultasi.id_konsultasi,
-konsultasi.tanggal_konsul,
-konsultasi.jam_konsul,
-konsultasi.room_konsul,
-calon_klien.id_calon_klien,
-calon_klien.nama,
-karyawan.id_karyawan,
-karyawan.nama AS namaadvo,
-konsultasi.kronologi
-FROM
-karyawan
-INNER JOIN konsultasi ON konsultasi.id_karyawan = karyawan.id_karyawan
-INNER JOIN calon_klien ON konsultasi.id_calon_klien = calon_klien.id_calon_klien ;
-
--- ----------------------------
 -- View structure for view_perkara
 -- ----------------------------
 DROP VIEW IF EXISTS `view_perkara`;
@@ -543,7 +515,28 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW
 -- View structure for view_perkaraonprocess
 -- ----------------------------
 DROP VIEW IF EXISTS `view_perkaraonprocess`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `view_perkaraonprocess` AS  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `view_perkaraonprocess` AS SELECT
+	`perkara`.`id_perkara` AS `id_perkara`,
+	`perkara`.`nomor_perkara` AS `nomor_perkara`,
+	`perkara`.`judul` AS `judul`,
+	`klien`.`nama_klien` AS `nama_klien`,
+	`perkara`.`tgl_daftar_perkara` AS `tgl_daftar_perkara`,
+	`perkara`.`kategori` AS `kategori`,
+	`perkara`.`tergugat` AS `tergugat`,
+	`perkara`.`status` AS `status`
+FROM
+	(
+		`perkara`
+		JOIN `klien` ON (
+			(
+				`perkara`.`id_klien` = `klien`.`id_klien`
+			)
+		)
+	)
+WHERE
+	(
+		`perkara`.`status` LIKE '%onprocess%'
+	) ;
 
 -- ----------------------------
 -- View structure for view_perkaraputus
@@ -561,7 +554,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW
 -- View structure for view_resume_perkara
 -- ----------------------------
 DROP VIEW IF EXISTS `view_resume_perkara`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `view_resume_perkara` AS select `perkara`.`id_perkara` AS `id_perkara`,`perkara`.`judul` AS `judul`,`klien`.`nama_klien` AS `nama_klien`,`perkara`.`jenis_perkara` AS `jenis_perkara`,`perkara`.`tgl_daftar_perkara` AS `tgl_daftar_perkara`,`perkara`.`tgl_putusan` AS `tgl_putusan`,`perkara`.`keterangan_putusan` AS `keterangan_putusan`,`perkara`.`file_resume` AS `file_resume` from (`perkara` join `klien` on((`perkara`.`id_klien` = `klien`.`id_klien`))) ; ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `view_resume_perkara` AS select `perkara`.`id_perkara` AS `id_perkara`,`perkara`.`judul` AS `judul`,`klien`.`nama_klien` AS `nama_klien`,`perkara`.`jenis_perkara` AS `jenis_perkara`,`perkara`.`tgl_daftar_perkara` AS `tgl_daftar_perkara`,`perkara`.`tgl_putusan` AS `tgl_putusan`,`perkara`.`keterangan_putusan` AS `keterangan_putusan`,`perkara`.`file_resume` AS `file_resume` from (`perkara` join `klien` on((`perkara`.`id_klien` = `klien`.`id_klien`))) ;
 
 -- ----------------------------
 -- View structure for view_team_perkara

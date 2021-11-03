@@ -431,9 +431,15 @@ class Madmin extends CI_Model
 
 
     // konsultasi
-    public function tampilTabelKonsultasi()
+    public function tampilTabelKonsultasi($id = NULL)
     {
-        return $this->db->get('view_konsultasi')->result();
+        if(isset($id)){
+            $this->db->where('id_konsultasi', $id);
+            return $this->db->get('view_konsultasi')->row();
+        }
+        else {
+            return $this->db->get('view_konsultasi')->result();
+        }
     }
     
     public function settingKonsultasi($data, $id)

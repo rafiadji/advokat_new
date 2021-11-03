@@ -27,13 +27,22 @@
 			</div>
 			<div class="card-body">
 				<div class="form-group"> <label class="">Tanggal</label>
-					<input type="date" name="tanggal" class="form-control" placeholder="Nomor Induk Anggota Advokat" value="<?php echo $karyawan->no_induk_advokat ?>" disabled>
+					<input type="date" name="tanggal" class="form-control" value="<?php echo $konsultasi->tanggal_konsul ?>">
 				</div>
 				<div class="form-group"> <label class="">Jam</label>
-					<input type="time" name="jam" class="form-control" placeholder="Nomor KTP" value="<?php echo $karyawan->no_ktp ?>" disabled>
+					<input type="time" name="jam" class="form-control" value="<?php echo $konsultasi->jam_konsul ?>">
 				</div>
 				<div class="form-group"> <label class="">Nama Room</label>
-					<input type="text" name="room" class="form-control" placeholder="Nama Lengkap" value="<?php echo $karyawan->nama ?>">
+					<input type="text" name="room" class="form-control" placeholder="Nama Room" value="<?php echo $konsultasi->room_konsul ?>">
+				</div>
+				<div class="form-group"> <label class="">Advokat</label>
+					<select name="advokat" class="form-control select2" id="advokat">
+					<option disabled selected>Pilih Advokat</option>
+						<?php foreach($karyawan as $adv): 
+							if($adv->beban < 3) :?>
+							<option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
+						<?php endif; endforeach; ?>
+					</select>
 				</div>
 			</div>
 			<div class="card-footer">

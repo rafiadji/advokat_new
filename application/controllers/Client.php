@@ -27,9 +27,11 @@ class Client extends CI_Controller
 
     public function profile()
     {
+		$data['info'] = $this->mc->cek_info($this->session->userdata('id_calon_klien'));
+
         $this->template->title = 'Profile';
 		$this->template->page->title = 'Profile';
-		$this->template->content->view('client/form_profile');
+		$this->template->content->view('client/form_profile', $data);
 		$this->template->publish('layouts/front/base');
     }
 
@@ -37,12 +39,12 @@ class Client extends CI_Controller
 	{
 		$post = $this->input->post();
 		$this->mc->updateKlien($post);
-		redirect('client/client');
+		redirect('client/profile');
 	}
 
     public function konsultasi()
     {
-        $data['konsultasi'] = $this->mc->dataKonsultasi(1); // angka 1 diganti session id
+        $data['konsultasi'] = $this->mc->dataKonsultasi($this->session->userdata('id_calon_klien')); // angka 1 diganti session id
 
         $this->template->title = 'Profile';
 		$this->template->page->title = 'Profile';
@@ -62,7 +64,7 @@ class Client extends CI_Controller
     {
         $post = $this->input->post();
         $this->mc->save_kronologi($post);
-        redirect('client/client');
+        redirect('client/daftarkonsultasi');
     }
 
 	
