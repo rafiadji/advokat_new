@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <?php if($konsultasi->tanggal_konsul > date('Y-m-d') || $konsultasi->tanggal_konsul < date('Y-m-d')):?>
                             <div class="alert alert-warning">
-							    <i class="icon-warning-sign"></i><strong>Warning!</strong> <?php echo $konsultasi->tanggal_konsul?> Better check yourself, you're not looking too good.
+							    <i class="icon-warning-sign"></i>Oops! Konsultasi Anda di jadwalkan pada tanggal <strong><?php echo $konsultasi->tanggal_konsul?> di jam <?php echo $konsultasi->jam_konsul?></strong>. Mohon membuka laman ini pada jadwal yang telah di tentukan.
 							</div>
                             <?php else:?>
                             <div class="meet embed-responsive embed-responsive-16by9"></div>

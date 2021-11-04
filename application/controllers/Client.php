@@ -44,7 +44,7 @@ class Client extends CI_Controller
 
     public function konsultasi()
     {
-        $data['konsultasi'] = $this->mc->dataKonsultasi($this->session->userdata('id_calon_klien')); // angka 1 diganti session id
+        $data['konsultasi'] = $this->mc->dataKonsultasi($this->session->userdata('id_calon_klien')); 
 
         $this->template->title = 'Profile';
 		$this->template->page->title = 'Profile';
