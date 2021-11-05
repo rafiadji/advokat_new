@@ -94,29 +94,31 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
                 <?php } ?>
                 </select>
             </div>
-            <div class="form-group"> <label class="">Advokat 1*</label>
+            <div class="form-group"> <label class="">Pengacara 1*</label>
                 <select name="advo1" class="form-control select2" id="advokat">
-                <option disabled selected>Pilih Advokat</option>
+                <option disabled selected>Pilih Pengacara</option>
                     <?php foreach($karyawan as $adv): 
                         if($adv->beban < 3) :?>
                         <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
                     <?php endif; endforeach; ?>
                 </select>
             </div>
-            <div class="form-group"> <label class="">Advokat 2*</label>
+            <div class="form-group"> <label class="">Pengacara 2*</label>
                 <select name="advo2" class="form-control select2" id="advokat">
-                <option disabled selected>Pilih Advokat</option>
-                    <?php foreach($karyawan as $adv): ?>
-                    <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
-                    <?php endforeach; ?>
+                <option disabled selected>Pilih Pengacara</option>
+                <?php foreach($karyawan as $adv): 
+                        if($adv->beban < 3) :?>
+                        <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
+                    <?php endif; endforeach; ?>
                 </select>
             </div>
-            <div class="form-group"> <label class="">Advokat 3*</label>
+            <div class="form-group"> <label class="">Pengacara 3*</label>
                 <select name="advo3" class="form-control select2" id="advokat">
-                <option disabled selected>Pilih Advokat</option>
-                    <?php foreach($karyawan as $adv): ?>
-                    <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
-                    <?php endforeach; ?>
+                <option disabled selected>Pilih Pengacara</option>
+                <?php foreach($karyawan as $adv): 
+                        if($adv->beban < 3) :?>
+                        <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
+                    <?php endif; endforeach; ?>
                 </select>
             </div>
         </div>
