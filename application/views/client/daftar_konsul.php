@@ -1,10 +1,39 @@
 <!-- Content
 ============================================= -->
 <section id="content">
-
     <div class="content-wrap bg-light">
+        <div class="col-lg-12 col-md-12">
+            <div class="card my-5 shadow-sm">
+                <div class="card-body p-5">
 
-        <div class="container">
+                    <h4 class="ls4 center">Data Konsultasi</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tanggal Konsultasi</th>
+                                <th>Jam Konsultasi</th>
+                                <th>Room Konsul</th>
+                                <th>Pengacara</th>
+                                <th>Kronologi</th>
+                                <th>Catatan Konsultasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($list_konsul as $list) :?>
+                            <tr>
+                                <td><?php echo $list->tanggal_konsul?></td>
+                                <td><?php echo $list->jam_konsul?></td>
+                                <td><?php echo $list->room_konsul?></td>
+                                <td><?php echo $list->namaadvo?></td>
+                                <td><?php echo $list->kronologi?></td>
+                                <td><?php echo $list->catatan?></td>
+                            </tr>
+                            <?php endforeach;?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <form action="<?php echo site_url('client/kronologisubmit') ?>" method="post">
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-md-10">

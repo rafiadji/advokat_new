@@ -18,6 +18,12 @@ class Mclient extends CI_Model
         return $this->db->get('konsultasi')->row();
     }
 
+    public function tabelkonsul($id)
+    {
+        $this->db->where('id_calon_klien', $id);
+        return $this->db->get('view_konsultasi')->result();
+    }
+
     public function updateKlien($data)
     {
         $id = $data['id_calon_klien'];
@@ -42,5 +48,7 @@ class Mclient extends CI_Model
         $this->db->where('id_calon_klien', $id);
         return $this->db->get('calon_klien')->row();
     }
+
+
 
 }

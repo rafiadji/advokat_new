@@ -46,8 +46,6 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 			</div>
 		</div>
 		<div class="card-body">
-		</div>
-		<div class="card-body">
 			<table class="table table-bordered table-striped datatable">
 				<thead>
 					<tr>
@@ -59,6 +57,7 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 						<th>Nama Calon Klien</th>
 						<th>Nama Advokat</th>
 						<th>Kronologi </th>
+						<th>Notulen Konsul</th>
 						<th>Opsi</th>
 					</tr>
 				</thead>
@@ -66,13 +65,14 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 					<?php foreach ($konsultasi as $k) : ?>
 						<tr class="">
 							<td></td>
-							<td><?php echo $k->tanggal_konsul ?></td>
+							<td><?php echo $k->id_konsultasi ?></td>
 							<td><?php echo $k->tanggal_konsul ?></td>
 							<td><?php echo $k->jam_konsul ?></td>
 							<td><?php echo $k->room_konsul ?></td>
 							<td><?php echo $k->nama ?></td>
 							<td><?php echo $k->namaadvo ?></td>
 							<td><?php echo $k->kronologi ?></td>
+							<td><?php echo $k->catatan?></td>
 							<td>
 								<a href="<?php echo site_url('admin/editKonsultasi/' . $k->id_konsultasi) ?>" class="btn btn-primary btn-xs" onclick="
 									return confirm('Apakah Anda ingin melihat detail data Konsultasi')">SET KONSULTASI</a>

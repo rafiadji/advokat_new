@@ -19,7 +19,7 @@
 					<img src="<?php echo site_url('assets/dist/img/logoadvokat.jpg'); ?>" class="img-circle elevation-2" alt="User Image">
 
 					<p>
-						<?php echo $this->session->userdata('nama') . " - " . $this->session->userdata('jabatan') ; ?>
+						<?php echo $this->session->userdata('id_karyawan') . " - " .$this->session->userdata('nama') . " - " . $this->session->userdata('jabatan') ; ?>
 					</p>
 				</li>
 				<!-- Menu Body -->

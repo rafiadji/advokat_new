@@ -360,7 +360,7 @@ class Advokat extends CI_Controller {
   public function lihatKonsultasi()
 	{
 
-		$data['konsultasi'] = $this->mad->tampilTabelKonsultasi();
+		$data['konsultasi'] = $this->mad->tampilTabelKonsultasi($this->session->userdata('id_karyawan'));
 
 		$this->template->title = 'Konsultasi';
 		$this->template->page->title = 'Konsultasi';

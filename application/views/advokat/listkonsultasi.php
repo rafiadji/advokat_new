@@ -56,6 +56,7 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 						<th>Nama Calon Klien</th>
 						<th>Nama Advokat</th>
 						<th>Kronologi </th>
+						<th>Notulen Konsul</th>
 						<th>Opsi</th>
 					</tr>
 				</thead>
@@ -69,9 +70,10 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 							<td><?php echo $k->nama ?></td>
 							<td><?php echo $k->namaadvo ?></td>
 							<td><?php echo $k->kronologi ?></td>
+							<td><?php echo $k->catatan?></td>
 							<td>
 								<a href="<?php echo site_url('advokat/konsul/' . $k->id_konsultasi) ?>" class="btn btn-primary btn-xs" onclick="
-									return confirm('Apakah Anda ingin melihat detail data Konsultasi')">KONSULTASI</a>
+									return confirm('Apakah Anda ingin melakukan sesi Konsultasi')">KONSULTASI</a>
 							</td>
 						</tr>
 					<?php endforeach; ?>

@@ -45,6 +45,7 @@ class Client extends CI_Controller
     public function konsultasi()
     {
         $data['konsultasi'] = $this->mc->dataKonsultasi($this->session->userdata('id_calon_klien')); 
+		$data['tabelkonsultasi'] = $this->mc->tabelkonsul($this->session->userdata('id_calon_klien'));
 
         $this->template->title = 'Profile';
 		$this->template->page->title = 'Profile';
@@ -54,9 +55,11 @@ class Client extends CI_Controller
 
 	public function daftarkonsultasi()
     {
+		$data['list_konsul'] = $this->mc->tabelkonsul($this->session->userdata('id_calon_klien')); 
+
         $this->template->title = 'Kronologi';
 		$this->template->page->title = 'Kronologi';
-		$this->template->content->view('client/daftar_konsul');
+		$this->template->content->view('client/daftar_konsul', $data);
 		$this->template->publish('layouts/front/base');
     }
 
@@ -66,6 +69,11 @@ class Client extends CI_Controller
         $this->mc->save_kronologi($post);
         redirect('client/daftarkonsultasi');
     }
+
+	public function tabelKonsul()
+	{
+		# code...
+	}
 
 	
 }

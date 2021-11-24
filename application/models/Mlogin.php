@@ -17,6 +17,7 @@ class Mlogin extends CI_Model
             $data_session = array(
                 'username' => $username,
                 'nama' => $cek['nama'],
+                'id_karyawan' => $cek['id_karyawan'],
                 'jabatan' => $cek['jabatan'],
                 'status' => true
             );
