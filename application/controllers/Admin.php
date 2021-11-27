@@ -62,7 +62,7 @@ class Admin extends CI_Controller
 			'id_karyawan' => $this->input->post('advokat')
 		);
 		$this->ma->settingKonsultasi($data, $id);
-		$this->session->set_flashdata('success_message', 'Data Klien berhasil diubah');
+		$this->session->set_flashdata('success_message', 'Data Konsultasi berhasil disimpan');
 		redirect('admin/lihatKonsultasi');
 	}
 

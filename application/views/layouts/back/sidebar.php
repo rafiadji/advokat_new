@@ -41,12 +41,12 @@
 						<p>Data Tim Advokat</p>
 					</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a href="<?php echo site_url('admin/lihatjadwal')?>" class="nav-link">
 						<i class="nav-icon fas fa-calendar-check"></i>
 						<p>Jadwal Sidang</p>
 					</a>
-				</li>
+				</li> -->
 				<li class="nav-item">
 					<a href="<?php echo site_url('admin/lihatKonsultasi')?>" class="nav-link">
 						<i class="nav-icon fas fa-balance-scale"></i>
@@ -55,24 +55,24 @@
 				</li>
 				<?php endif;
 				if($this->session->userdata('jabatan') == "ADV") :?>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a href="<?php echo site_url('advokat/lihatPerkara')?>" class="nav-link">
 						<i class="nav-icon fas fa-archive"></i>
 						<p>Data Perkara</p>
 					</a>
-				</li>
+				</li> -->
 				<li class="nav-item">
 					<a href="<?php echo site_url('advokat/lihatKonsultasi')?>" class="nav-link">
 						<i class="nav-icon fas fa-balance-scale"></i>
 						<p>Konsultasi</p>
 					</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a href="<?php echo site_url('advokat/lihatJadwal')?>" class="nav-link">
 						<i class="nav-icon fas fa-calendar-alt"></i>
 						<p>Jadwal Sidang</p>
 					</a>
-				</li>
+				</li> -->
 				<?php endif;
 				if($this->session->userdata('jabatan') == "K") :?>
 				<li class="nav-item">
@@ -93,12 +93,12 @@
 						<p>Data Karyawan</p>
 					</a>
 				</li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 					<a href="<?php echo site_url('ketua/lihatPerkara')?>" class="nav-link">
 						<i class="nav-icon fas fa-balance-scale"></i>
 						<p>Data Perkara</p>
 					</a>
-				</li>
+				</li> -->
 				<?php endif;?>
 			</ul>
 		</nav>

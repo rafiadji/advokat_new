@@ -361,7 +361,6 @@ class Advokat extends CI_Controller {
 	{
 
 		$data['konsultasi'] = $this->mad->tampilTabelKonsultasi($this->session->userdata('id_karyawan'));
-
 		$this->template->title = 'Konsultasi';
 		$this->template->page->title = 'Konsultasi';
 		$this->template->content->view('advokat/listkonsultasi', $data);
@@ -382,6 +381,6 @@ class Advokat extends CI_Controller {
   {
     $post = $this->input->post();
     $this->mad->updateKonsultasi($post);
-    redirect('advokat/lihatkonsultasi');
+    redirect('advokat/lihatKonsultasi');
   }
 }

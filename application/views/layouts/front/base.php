@@ -55,9 +55,9 @@
                             <ul class="menu-container one-page-menu">
                                 <li class="menu-item current"><a class="menu-link" href="<?php echo site_url(''); ?>"><div>Home</div></a></li>
 								<?php if($this->session->userdata('username') != NULL) : ?>
+									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/profile'); ?>"><div>Profil</div></a></li>
 									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/daftarkonsultasi'); ?>"><div>Daftar Kosultasi</div></a></li>
 									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/konsultasi'); ?>"><div>Kosultasi</div></a></li>
-									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('client/profile'); ?>"><div>Profil</div></a></li>
 									<li class="menu-item"><a class="menu-link" href="<?php echo site_url('logincalonklien/logout'); ?>"><div>Logout</div></a></li>
 								<?php else: ?>
 									<li class="menu-item"><a href="#myModal1" data-lightbox="inline" class="menu-link"><div>Login</div></a></li>
