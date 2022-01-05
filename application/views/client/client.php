@@ -42,8 +42,8 @@
         <div class="container clearfix">
 
             <div id="section-features" class="heading-block text-center page-section">
-                <h2>Features Overview</h2>
-                <span>Some of the Features that are gonna blow your mind off</span>
+                <h2>List of Legal Service </h2>
+                <span>Offered by Buyung Law Firm</span>
             </div>
 
             <div class="row justify-content-center col-mb-50 mb-0">
@@ -62,7 +62,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon" data-animate="bounceIn" data-delay="200">
-                            <a href="#"><img src="<?php echo base_url('assets/front/images/icons/features/retina.png'); ?>" alt="Retina Graphics"></a> 
+                            <a href="#"><img src="<?php echo base_url('assets/front/images/icons/features/retina.png'); ?>" alt="Retina Graphics"></a>
                         </div>
                         <div class="fbox-content">
                             <h3>Retina Graphics</h3>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-            <!-- Ganti ini -->
+                <!-- Ganti ini -->
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon" data-animate="bounceIn" data-delay="400">
@@ -160,13 +160,13 @@
         </div>
 
 
+    </div>
+
+    <div class="section footer-stick">
+
+        <div class="container clearfix">
         </div>
 
-        <div class="section footer-stick">
-
-            <div class="container clearfix">
-            </div>
-
-        </div>
+    </div>
     </div>
 </section><!-- #content end -->
