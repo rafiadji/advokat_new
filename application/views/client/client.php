@@ -50,11 +50,11 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon" data-animate="bounceIn">
-                            <a href="#"><img src="<?php echo base_url('assets/front/images/icons/features/responsive.png'); ?>" alt="Responsive Layout"></a>
+                            <a href="#"><img src="<?php echo base_url('assets/front/images/icons/features/tuscany.png'); ?>" alt="Responsive Layout"></a>
                         </div>
                         <div class="fbox-content">
-                            <h3>Responsive Layout</h3>
-                            <p>Powerful Layout with Responsive functionality that can be adapted to any screen size. Resize browser to view.</p>
+                            <h3> Environmental Law</h3>
+                            <p>Our Lawfirm deals with environmental law issues, which can often occur since the planned business activities are designed, during business operations, including after the end of business activities</p>
                         </div>
                     </div>
                 </div>
@@ -62,11 +62,11 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon" data-animate="bounceIn" data-delay="200">
-                            <a href="#"><img src="<?php echo base_url('assets/front/images/icons/features/retina.png'); ?>" alt="Retina Graphics"></a>
+                            <a href="#"><img src="<?php echo base_url('assets/front/images/icons/features/corporation.png'); ?>" alt="Retina Graphics"></a>
                         </div>
                         <div class="fbox-content">
-                            <h3>Retina Graphics</h3>
-                            <p>Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Retina Icons, Fonts &amp; all others graphics are optimized.</p>
+                            <h3>Company and Commercial</h3>
+                            <p>Our Law Firm provide a complete range of services for the continuity of your business activities including assistance to business plan, business activities and business development plans</p>
                         </div>
                     </div>
                 </div>
@@ -74,15 +74,15 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon" data-animate="bounceIn" data-delay="400">
-                            <a href="#"><img src="images/icons/features/performance.png" alt="Powerful Performance"></a>
+                            <a href="#"><img src="<?php echo base_url('assets/front/images/icons/features/contract.png'); ?>" alt="Powerful Performance"></a>
                         </div>
                         <div class="fbox-content">
-                            <h3>Powerful Performance</h3>
-                            <p>Canvas includes tons of optimized code that are completely customizable and deliver unmatched fast performance.</p>
+                            <h3>Labor</h3>
+                            <p>he dynamic development of labor law arrangements and humanist approaches that are not less important, has become our law firm’s contribution to various business entity</p>
                         </div>
                     </div>
                 </div>
-
+                <!-- 
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-box fbox-plain">
                         <div class="fbox-icon" data-animate="bounceIn" data-delay="600">
@@ -153,7 +153,7 @@
                             <p>Canvas includes tons of optimized code that are completely customizable and deliver unmatched fast performance.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="divider divider-sm divider-center"><i class="icon-circle"></i></div>
