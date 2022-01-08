@@ -23,7 +23,7 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 <section class="content">
 	<div class="card">
 		<div class="card-header">
-			<h3 class="card-title">Daftar Anggota Tim Advokat</h3>
+			<h3 class="card-title">Daftar Anggota Tim Kuasa Hukum</h3>
 
 			<div class="card-tools">
 

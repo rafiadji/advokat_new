@@ -35,13 +35,12 @@
 				<div class="form-group"> <label class="">Nama Room</label>
 					<input type="text" name="room" class="form-control" placeholder="Nama Room" value="<?php echo $konsultasi->room_konsul ?>">
 				</div>
-				<div class="form-group"> <label class="">Advokat</label>
+				<div class="form-group"> <label class="">Pengacara Konsultasi</label>
 					<select name="advokat" class="form-control select2" id="advokat">
-					<option disabled selected>Pilih Advokat</option>
-						<?php foreach($karyawan as $adv): 
-							if($adv->beban < 3) :?>
+					<option disabled selected>Pilih Pengacara</option>
+						<?php foreach($karyawan as $adv):?>
 							<option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
-						<?php endif; endforeach; ?>
+						<?php endforeach; ?>
 					</select>
 				</div>
 			</div>

@@ -41,7 +41,7 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 						<th>Jam Mulai</th>
 						<th>Jam Selesai</th>
 						<th>Lokasi</th>
-						<th>Advokat</th>
+						<th>Pengacara</th>
 					</tr>
 				</thead>
 				<tbody>

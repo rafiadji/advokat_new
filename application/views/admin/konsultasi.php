@@ -55,7 +55,7 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 						<th>Jam Konsultasi</th>
 						<th>Room Meeting</th>
 						<th>Nama Calon Klien</th>
-						<th>Nama Advokat</th>
+						<th>Nama Pengacara</th>
 						<th>Kronologi </th>
 						<th>Notulen Konsul</th>
 						<th>Opsi</th>
