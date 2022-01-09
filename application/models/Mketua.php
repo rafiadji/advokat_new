@@ -120,14 +120,23 @@ public function viewTim($data)
   public function tampilDataAdvokatTim()
   {
     $query = "SELECT
-    karyawan.id_karyawan, karyawan.nama,
-    COUNT(perkara.id_perkara) AS beban
-    FROM
-    perkara
-    INNER JOIN detail_perkara ON detail_perkara.id_perkara = perkara.id_perkara
-    INNER JOIN karyawan ON detail_perkara.id_karyawan = karyawan.id_karyawan
-    AND perkara.status = 'onprocess'
-    GROUP BY karyawan.username";
+    *
+  FROM
+    (
+      SELECT
+        karyawan.id_karyawan,
+        karyawan.nama,
+        COUNT(perkara. STATUS) AS BEBAN
+      FROM
+        karyawan
+      INNER JOIN detail_perkara ON detail_perkara.id_karyawan = karyawan.id_karyawan
+      LEFT JOIN perkara ON detail_perkara.id_perkara = perkara.id_perkara
+      AND perkara. STATUS = 'onprocess'
+      GROUP BY
+        karyawan.nama
+    ) AS tmp
+  WHERE
+    beban < 3";
    return $this->db->query($query)->result();
   }
 
