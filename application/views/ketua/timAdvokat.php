@@ -86,6 +86,24 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
 		</div>
         <form class="" method="post" action="<?php echo site_url('ketua/buatTimAdvokatSubmit')?>" style="opacity:1;">
         <div class="card-body">
+            <div class="form-group"> <label class="">Beban Advokat</label>
+                <table class="table table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Advokat</th>
+                            <th>Beban Perkara</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($karyawan as $advb):?>
+                            <tr>
+                                <td><?php echo $advb->nama?></td>
+                                <td><?php echo $advb->BEBAN?> Perkara</td>
+                            </tr>
+                        <?php endforeach;?>
+                    </tbody>
+                </table>
+            </div>
             <div class="form-group"> <label class="">Perkara</label>
                 <select class="form-control" name="id_perkara">
                 <option disabled selected value="">Pilih Perkara</option>
@@ -95,30 +113,21 @@ $this->template->stylesheet->add('assets/plugins/datatables-responsive/css/respo
                 </select>
             </div>
             <div class="form-group"> <label class="">Pengacara 1*</label>
-                <select name="advo1" class="form-control select2" id="advokat">
+                <select name="advo1" class="form-control select2">
                 <option disabled selected>Pilih Pengacara</option>
-                    <?php foreach($karyawan as $adv): 
-                        if($adv->beban < 3) :?>
-                        <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
-                    <?php endif; endforeach; ?>
+                    <?php foreach($karyawan as $adv):?>
+                        <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>;
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="form-group"> <label class="">Pengacara 2*</label>
-                <select name="advo2" class="form-control select2" id="advokat">
+                <select name="advo2" class="form-control select2">
                 <option disabled selected>Pilih Pengacara</option>
-                <?php foreach($karyawan as $adv): 
-                        if($adv->beban < 3) :?>
-                        <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
-                    <?php endif; endforeach; ?>
                 </select>
             </div>
             <div class="form-group"> <label class="">Pengacara 3*</label>
-                <select name="advo3" class="form-control select2" id="advokat">
+                <select name="advo3" class="form-control select2">
                 <option disabled selected>Pilih Pengacara</option>
-                <?php foreach($karyawan as $adv): 
-                        if($adv->beban < 3) :?>
-                        <option value='<?php echo $adv->id_karyawan ?>' ><?php echo $adv->nama?></option>";
-                    <?php endif; endforeach; ?>
                 </select>
             </div>
         </div>
@@ -171,5 +180,6 @@ $this->template->javascript->add('assets/plugins/datatables/jquery.dataTables.mi
 $this->template->javascript->add('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js');
 $this->template->javascript->add('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js');
 $this->template->javascript->add('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js');
+$this->template->javascript->add('assets/js/timadvokat.js');
 ?>
 <!-- EndJS -->

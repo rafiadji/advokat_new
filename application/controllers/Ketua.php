@@ -28,6 +28,21 @@ class Ketua extends CI_Controller {
 
   // pemilihan tim 
 
+  public function optTimAdvokat()
+  {
+    $pilih1 = $this->input->post('id_1');
+    $pilih2 = $this->input->post('id_2');
+    $karyawan = $this->mk->tampilDataAdvokatTim();
+    $str = "<option disabled selected>Pilih Pengacara</option>";
+    foreach($karyawan as $adv):
+      if ($adv->id_karyawan == $pilih1 || $adv->id_karyawan == $pilih2) {
+        continue;
+      }
+      $str .= "<option value='$adv->id_karyawan' >$adv->nama</option>";
+    endforeach;
+    echo $str;
+  }
+
   public function buatTimAdvokat()
   {
     $data['perkara'] = $this->ma->tampilDataPerkaraOnprocess();
